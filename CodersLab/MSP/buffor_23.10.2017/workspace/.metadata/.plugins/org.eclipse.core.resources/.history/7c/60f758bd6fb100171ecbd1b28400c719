@@ -1,0 +1,57 @@
+
+
+
+
+sudo apt install python3-pip   <--- instalowanie programu pip który słurzy do instalowania zew. bibliotek do pythona
+pip3 install django 
+pip3 install --upgrade <nazwa>
+pip3 install -r <nazwa-pliku> <--- instalacja z pliku
+
+------------------BASH
+history <--- lista 1000 ostatnich komend   CTRL+R
+!! <--- wykonuje ostatnią komendę
+!5 <--- wykonuje 5 komendę z listy
+!-3 <--- wykonuje 3 komendę od końca
+!nazwa <--- wykonuje ostatnią komendę zaczynającą się od grep
+mkdir
+pwd <--- scieżka gdzie jesteśmy 
+cp plik1 plik2 <--- kopiowanie plików 
+mv plik1 plik2 <--- przenoszenie plików
+ls -a <--- także ukryte liki 
+ls -l <--- dodatkowe info
+rm plik
+rmdir katalog
+cat file <--- wyświetala plik 
+less plik <--- wyświetla plik strona po stronie 
+
+
+
+------------------Vi:
+ESC <--- wejście do trybu komend
+I <--- przejście do trybu edycji 
+:30 <--- Przesuwa kursor do wskazanej lini
+/<ciąg_znaków> <--- Wyszukuje dany napis np: /cos
+?<ciąg_znaków> <--- szuka od dołu
+n <--- znajduje nastepne wyszuknie 
+N <--- poprzednie wyszukanie
+:e plik <--- otwiera nowy plik
+:w <--- zapisuje plik
+:w! <--- zdejmuje z pliku read-only
+:w plik <--- zapisuje do nowego pliku 
+:q <--- wyjscie z programu
+
+
+
+
+
+------------------Katalogi
+/dev <--- urządzenia
+/proc <--- miedzy innnymi informacje o systemie
+/etc <--- pliki konfiguracyjne 
+/sbin <--- pliki binarne systemowe
+/lib <--- biblioteki
+/mnt <--- zamontowane dyski
+/bin <--- programy 
+/etc/init.d <--- Katalog z któ©ego uruchamiane są skrypty podczas startu systemu
+/etc/profile.d <--- uruchamiane przy logowaniu urzytkownika
+/usr <--- pliki wykonywalne programów, kod źródłowy, biblioteki i dokumentacjie 

@@ -1,0 +1,10 @@
+class Calculator:
+    marka_kalkulatora = "brak"
+    def __init__(self,marka):
+        self.marka_kalkulatora = marka
+        print("tworzenie obiekt klasy Calkulator")
+        
+
+c = Calculator("TexasInstruments")
+print(c.marka_kalkulatora)
+print(vars(c))

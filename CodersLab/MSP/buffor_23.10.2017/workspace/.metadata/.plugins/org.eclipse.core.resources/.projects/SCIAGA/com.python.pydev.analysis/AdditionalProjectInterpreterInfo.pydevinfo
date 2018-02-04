@@ -1,0 +1,78 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/SCIAGA/com.python.pydev.analysis/v2_indexcache
+D6_OOP_Stat_Klaso_Dynam_Iterato_Gene_Reg.__init__|1508356863774818000|/home/bq666/workspace/SCIAGA/D6_OOP_Stat_Klaso_Dynam_Iterato_Gene_Reg/__init__.py
+D4_HTML_Flask.__init__|1508089614551289000|/home/bq666/workspace/SCIAGA/D4_HTML_Flask/__init__.py
+D3_wyjatki_dekoratory.__init__|1508072141573821000|/home/bq666/workspace/SCIAGA/D3_wyjatki_dekoratory/__init__.py
+D2_listy_tuple_slowniki_IN_lancuchy_mod.__init__|1508001933718712000|/home/bq666/workspace/SCIAGA/D2_listy_tuple_slowniki_IN_lancuchy_mod/__init__.py
+D1_funk_IF_FOR_WHILE_magiczparm.__init__|1508073925856483000|/home/bq666/workspace/SCIAGA/D1_funk_IF_FOR_WHILE_magiczparm/__init__.py
+D2_listy_tuple_slowniki_IN_lancuchy_mod.hobbit_mod|1508000725800908000|/home/bq666/workspace/SCIAGA/D2_listy_tuple_slowniki_IN_lancuchy_mod/hobbit_mod.py
+D5_obiektowe_dziedziczenie.__init__|1508356234336699000|/home/bq666/workspace/SCIAGA/D5_obiektowe_dziedziczenie/__init__.py
+Opisy_Bibliotek|1508090144310317000|/home/bq666/workspace/SCIAGA/Opisy_Bibliotek.py
+-- END DISKCACHE
+-- START DICTIONARY
+13
+6=D6_OOP_Stat_Klaso_Dynam_Iterato_Gene_Reg.__init__
+9=EBook
+4=D2_listy_tuple_slowniki_IN_lancuchy_mod.__init__
+12=Example.number_squared
+3=D4_HTML_Flask.__init__
+1=D3_wyjatki_dekoratory.__init__
+8=Book
+7=D1_funk_IF_FOR_WHILE_magiczparm.__init__
+10=Book.__init__
+11=Example
+13=EBook.__init__
+5=D2_listy_tuple_slowniki_IN_lancuchy_mod.hobbit_mod
+2=D5_obiektowe_dziedziczenie.__init__
+-- END DICTIONARY
+-- START TREE 1
+38
+a|1|a!11@
+a1|1|a1!19@
+a2|1|a2!19@
+app|1|app!27@
+arr|1|arr!11@
+b|1|b!11@
+bbt|1|bbt!35@
+boo|1|Book!17@
+c|1|c!11@
+dan|1|dane_w_tupli!11@
+day|1|day!35@
+des|3|desc!35@description!35@descfiption!42@
+dlu|1|dlugi_lancuch_txt!35@
+dou|1|double_pi_result!10@
+dro|1|droids!35@
+e|1|e!51@
+ebo|1|EBook!17@
+exa|1|Example!49@
+get|3|getdate_page!26@gettime_page!26@get_pi!10@
+her|1|heros!59@
+hob|3|hobbits!35@hobbit!35@hobbit!43@
+i|1|i!59@
+lan|1|lancuch_tekstowy!35@
+lis|3|list_me!58@lista!35@lista_z_tupli!35@
+log|1|login!26@
+los|1|los!35@
+mix|1|mix_types!35@
+my_|1|my_list!35@
+nam|2|name_zmienne!26@name_web!26@
+num|3|num2!59@num_suma!59@num1!59@
+r|1|r!27@
+sho|2|show_ship_passengers!58@show_tablica!58@
+sta|2|star_wars!35@starship!35@
+sum|2|sum_1!58@sum_0!58@
+tee|1|tee!59@
+tes|1|test!35@
+tri|1|triple_pi_result!10@
+tup|3|tupla_z_listy!35@tupla!35@tupla!11@
+-- END TREE
+-- START TREE 2
+6
+__i|2|__init__!8&18@__init__!9&18@
+aut|1|author!10&19@
+nam|1|name!10&19@
+num|3|number!11&51@number!12&51@number_squared!11&50@
+pri|3|price!10&19@print_book_info!8&18@print_book_info!9&18@
+siz|1|size_in_mb!13&19@
+-- END TREE

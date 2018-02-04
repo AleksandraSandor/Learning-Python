@@ -1,0 +1,18 @@
+
+
+
+def format_date(day,month,year):
+    day = int(day)
+    month = int(month)
+    year = int(year)
+    if((year <= 0) and (year >= 13)):
+        return None
+    if((month == 2) and (day >= 29)):
+        return None
+    if((day <= 0) and (day >= 32)):
+        return None
+    if(((month == 4) or (month == 6) or (month == 9) or (month == 11)) and (day >= 31)):
+        return None
+    if(month == 1):
+        month = "Stycznia"
+

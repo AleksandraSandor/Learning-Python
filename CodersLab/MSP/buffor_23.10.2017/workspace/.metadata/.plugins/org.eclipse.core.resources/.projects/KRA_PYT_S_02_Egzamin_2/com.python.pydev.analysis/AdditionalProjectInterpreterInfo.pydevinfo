@@ -1,0 +1,42 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/KRA_PYT_S_02_Egzamin_2/com.python.pydev.analysis/v2_indexcache
+exam.__init__|1508483588767171000|/home/bq666/workspace/KRA_PYT_S_02_Egzamin_2/exam/__init__.py
+exercise_4|1508490501879016000|/home/bq666/workspace/KRA_PYT_S_02_Egzamin_2/exercise_4.py
+exercise_3|1508487433610118000|/home/bq666/workspace/KRA_PYT_S_02_Egzamin_2/exercise_3.py
+exercise_2|1508486589181552000|/home/bq666/workspace/KRA_PYT_S_02_Egzamin_2/exercise_2.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+7=VIPUser.__init__
+5=VIPUser
+6=User
+3=exam.__init__
+8=User.__init__
+9=VIPUser.set_vip_card_number
+4=exercise_4
+1=exercise_3
+2=exercise_2
+-- END DICTIONARY
+-- START TREE 1
+6
+add|2|add_movie_page_post!10@add_movie_page!10@
+app|1|app!11@
+con|1|connect_to_db!10@
+mes|1|messages!18@
+use|1|User!25@
+vip|1|VIPUser!33@
+-- END TREE
+-- START TREE 2
+10
+__c|1|__check_card!5&34@
+__i|2|__init__!6&26@__init__!5&34@
+get|1|get_vip_card_number!5&34@
+mai|3|mail!7&35@mail!6&27@mail!8&27@
+nam|3|name!7&35@name!6&27@name!8&27@
+say|1|say_hello!6&26@
+set|1|set_vip_card_number!5&34@
+sur|3|surname!7&35@surname!6&27@surname!8&27@
+use|1|use_vip_card!5&34@
+vip|2|vip_card_number!7&35@vip_card_number!9&35@
+-- END TREE

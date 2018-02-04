@@ -1,0 +1,15 @@
+{% extends "school_base.html" %}
+
+<!-- templates/student.html -->
+
+{% block content %}
+<h2>{{ student.first_name }} {{ student.last_name }}</h2>
+<p><strong>klasa {{ student.get_school_class_display }}</strong></p>
+
+<ul>
+{% for subject in subjects %}
+    <li><a href="/grades/{{ student.id }}/{{ subject.id }}">{{ subject }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

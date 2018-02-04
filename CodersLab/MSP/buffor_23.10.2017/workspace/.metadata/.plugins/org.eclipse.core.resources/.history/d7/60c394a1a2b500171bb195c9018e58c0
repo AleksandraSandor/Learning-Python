@@ -1,0 +1,55 @@
+# zaposywanie nowej artosci do bazy danych
+class User:
+    #prywatna smienna klasowa: tutaj nazwa tabeli s któa sie laczymy
+    _TABLE_NAME = "user_data"
+         
+    def __init__(self, email, username, password):
+        self._id = -1
+        self._email = email
+        self.username = username
+        self.hashed_password = password
+    
+    @property    
+    def email(self):
+        return self._email
+    @email.setter # ten setter owinine zawalidowac dae domyslnie, a jezeli nie sa poprawne, wyrzucic wyjatkiem
+    # tylko ze tutaj jest napisany w niekompletnej formie
+    def email(self, email):
+        #try: - tutaj testuje funkcje i rzucam wyjatkiem
+        self._email = email
+     
+    @username.setter
+    def username(self, username):
+        return self._hashed_password
+     
+    @hashed_password.setter
+    def hashed_password = (self, hashed_password):
+        #TODO: implement hashng password
+        self._hashed_password = "*HASHED*" + hashed_password
+        
+    def save(self, cursor): #jakbysmy dali i connecion i cursor, to bymy uzaleznili to od sql connector, a klasa ma tlyko obsługiwac usera, dlateo to co jest potrzebn do wykonania zadan przesylamy z gory jako parametry i nie przechowujemy w klasie
+        if self._id == -1:
+            sql = "INSERT INTO {} VALUES(default, %s, %s, %s"
+            cursor.execute(sql, (self.email, self.username, self.hashed_password), self.id)
+        else:
+            sql = "UPDATE {} SET email=%X, username=%, hashed_password=%s WERE id=%s;".format(user._TABLE_NAME)
+            cursor.execute(sql, (self.email))
+            
+    @classmethod
+    def load_by_id(cls, user_id, cursor):
+        sql = """select id, email, username, hashed_password 
+            from {} where id = %s;""". format(cls.TABLE_NAME)
+        cursor.execute(sql, user_id)
+        loaded_user = User("","","")
+        
+        for row in cursor:
+            loaded_user._id = row[0]
+            loaded_user._email = row[1]
+            loaded_user._username = row[2]
+            loaded_user._hashed_password = row[3]
+            
+        
+            
+            
+
+

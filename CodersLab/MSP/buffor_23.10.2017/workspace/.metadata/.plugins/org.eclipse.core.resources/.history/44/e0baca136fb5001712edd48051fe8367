@@ -1,0 +1,58 @@
+# Zadanie 3
+# (4 pkt)
+# Używając Flaska, napisz stronę, która spełni następujące założenia:
+# Po wejściu metodą GET wyświetli pusty formularz, który będzie zawierał następujące pola:
+# name: nazwę produktu,
+# description: opis produktu,
+# price: cenę produktu.
+# Po wejściu metodą POST:
+# zweryfikuje poprawność danych,
+# zapisze te dane do bazy danych do tabeli Items (tabela taka sama jak w zadaniu 1),
+# jeśli którakolwiek dana będzie błędna, zamiast zapisywania do bazy, wyświetli na stronie komunikat o błędzie.
+# Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
+
+
+from flask import Flask, request
+from mysql.connector import connect
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="coderslab", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+        <head>
+            <title>Deletion</title>
+        </head>
+        <body>
+            {}
+        </body>
+    </html>
+    """
+    try:
+        #sql = "DELETE FROM product WHERE id={};".format(my_id)
+        #sql = "delete from {} where id = {}"
+        #my_id = request.args.get("id")
+        cnx = connect_to_db("cinemas_db")
+        cur = cnx.cursor()
+        table = request.args.get("table")
+        id = request.args.get("id")
+        print(table)
+        print(id)
+        sql = "delete from {} where id = {};".format(table,id)
+        cur.execute(sql)
+        html = html.format("Usunięto pozycję")        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()

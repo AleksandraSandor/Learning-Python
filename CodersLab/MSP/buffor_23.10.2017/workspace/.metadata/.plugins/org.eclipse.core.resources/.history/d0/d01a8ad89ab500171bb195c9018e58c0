@@ -1,0 +1,6 @@
+from model.user import user
+from db.db
+
+new_user = user("rafal@mail.com", "rafal", "rafal")
+new_user.hashed_password = "qwerty"
+new_user.save(cur)

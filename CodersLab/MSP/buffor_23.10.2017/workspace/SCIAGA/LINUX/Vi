@@ -1,0 +1,131 @@
+------------------Vi:
+ESC <--- wejście do trybu komend
+I <--- przejście do trybu edycji 
+:30 <--- Przesuwa kursor do wskazanej lini
+/<ciąg_znaków> <--- Wyszukuje dany napis np: /cos
+?<ciąg_znaków> <--- szuka od dołu
+n <--- znajduje nastepne wyszuknie 
+N <--- poprzednie wyszukanie
+:e plik <--- otwiera nowy plik
+:w <--- zapisuje plik
+:w! <--- zdejmuje z pliku read-only
+:w plik <--- zapisuje do nowego pliku 
+:q <--- wyjscie z programu
+
+Poruszanie się po tekście
+l lub [spacja] jeden znak w prawo 
+h lub [Backspace] jeden znak w lewo 
+k jedną linię w górę ↑
+j jedną linię w dół ↓
+Ctrl-f ekran w górę
+Ctrl-b ekran w dół
+Ctrl-u pół ekranu w górę
+Ctrl-d pół ekranu w dół
+0 (zero) kursor na początek linii
+$ kursor na koniec linii
+liczbaG kursor na początek wiersza o
+numerze liczba
+1G kursor na początek pliku
+G kursor na koniec pliku
+
+Edycja tekstu
+i wstawianie tekstu przed kursorem (insert)
+I wstawianie tekstu na początku wiersza (Insert)
+a wstawianie tekstu za kursorem (append)
+A wstawianie tekstu na końcu wiersza (Append)
+x usunięcie znaku spod kursora
+X usunięcie znaku przed kursorem
+r nadpisanie jednego znaku spod kursora (replace)
+R wprowadzanie z nadpisywaniem (Replace)
+p wstawienie zawartości bufora przed kursorem (paste)
+P wstawienie zawartości bufora za kursorem (Paste)
+o wstawienie nowego wiersza poniżej bieżącego
+O wstawienie nowego wiersza powyżej bieżącego
+u cofnięcie ostatniej zmiany (undo)
+J połączenie dwóch wierszy (bieżącego i następnego)
+dd skasowanie bieżącego wiersza
+yy skopiowanie bieżącego wiersza do bufora
+y skopiowanie zaznaczonego lub usuniętego fragmentu
+tekstu do bufora (yank)
+liczdd skasowanie licz wierszy licząc od bieżącego
+liczyy skopiowanie do bufora licz wierszy licząc od bieżącego
+v, V,
+Ctrl-v
+graficzne zaznaczanie tekstu (tylko edytor vim). 3
+różne tryby zaznaczania. Zaznaczony tekst kopiujemy
+do bufora poleceniem y.
+U,u na zaznaczonym fragmencie zamiana wszystkich liter
+na duże (U) lub na małe (u)
+~ na zaznaczonym fragmencie zmiana wielkości liter
+(małe na duże i duże na małe)
+< > zaznaczony fragment przesuwa w lewo lub w prawo
+
+Wyszukiwanie
+/wzorzec wyszukiwanie łańcucha wzorzec w dół
+?wzorzec wyszukiwanie łańcucha wzorzec w górę
+n następne wystąpienie ostatnio wyszukiwanego
+tekstu
+N poprzednie wystąpienie ostatnio wyszukiwanego
+tekstu 
+
+Inne
+Esc przejście do trybu wydawania poleceń
+: (dwukropek) będąc w trybie wydawania poleceń
+przejście do wiersza poleceń
+:help polecenie wyświetlenie pomocy na temat polecenia
+:r plik wstawienie w miejscu kursora zawartości
+pliku plik
+:w plik zapisanie pliku pod nową nazwą
+:n plik załadowanie nowego pliku
+:q! wyjście bez zapisu
+:q wyjście (pod warunkiem, że zmiany w
+pliku są zapisane)
+:wq zapisanie zmian i wyjście
+:x lub ZZ to samo co :wq
+:set number wyświetlenie numerów wierszy
+:set nonumber wygaszenie numerów wierszy
+:set all wypisuje wszystkie możliwe do
+ustawienia zmienne
+:set
+tabstop=liczba
+ustawienie długości znaku tabulacji na
+liczba
+:set
+syntax=off
+wyłączenie podświetlania składni
+:set syntax=c podświetlania składni zgodnej z jęz. C
+:set incsearch włączenie trybu szukania przyrostowego
+(ang. increase)
+. (kropka) powtórzenie ostatniej operacji
+:! uruchomienie zewnętrznej komendy
+:r !polecenie wstawienie w miejscu kursora wyniku
+zwracanego przez polecenie
+:split,
+:vsplit
+podział okna w pionie i poziomie.
+Nawigacja między oknami Ctrl-W.
+polecenie | vi
+- (znak minus)
+otwiera edytor z danymi zwróconymi
+przez polecenie
+
+Przykłady użycia komend i znaczników
+d0 skasowanie tekstu od bieżącej pozycji kursora do
+początku wiersza
+d$ jw. ale do końca wiersza
+dG kasuje wiersz bieżący i wszystkie wiersze poniżej
+d1G kasuje wiersz bieżący i wszystkie wiersze powyżej
+d3d kasuje 3 kolejne wiersze
+y5y skopiowanie do bufora 5 kolejnych wierszy 
+
+Zamiana
+:s/tekst1/tekst2 znalezienie w bieżącym wierszu pierwszego (od lewej) wystąpienia tekst1 i zastąpienie go
+przez tekst2
+:s/ tekst1/tekst2/g znalezienie w bieżącym wierszu wszystkich (global) wystąpień tekst1 i zastąpienie ich przez
+tekst2
+:1,$s/ tekst1/tekst2/g znalezienie w całym pliku wszystkich (global) wystąpień tekst1i zastąpienie ich przez tekst2
+:5,8s/ tekst1/tekst2/g jak wyżej, ale tylko dla wierszy od 5 do 8 włącznie
+:[adr1[,adr2]]s/tekst1/tekst2/[1|2|...|g]
+adr1, adr2 – identyfikatory linii, na których ma być wykonane polecenie zamiany. Gdy brak to tylko bieżąca linia
+tekst1, tekst2 – tekst do odszukania (opisany wyrażeniem regularnym) oraz tekst do zamiany
+flagi 1, 2, ..., g – ilość zamian, gdy g to zamiana wszystkich wystąpień 

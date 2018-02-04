@@ -1,0 +1,22 @@
+lis = [2, 4, 5, 8, 2, 4]
+lis_1 = [1, 3, 4, "a"]
+
+
+def histogram(lista):
+    cale = ""
+    for i in range(len(lista)):
+        if type(lista[i]) != int:
+            return("None")
+    for i in range(len(lista)):
+        row = ""
+        for ii in range(int(lista[i])):
+            row = row + "#"
+        cale = cale + row + "\n"
+    return(cale)
+
+
+print("Lista:")
+print(histogram(lis))
+print("nowa lista:")
+print(histogram(lis_1))
+

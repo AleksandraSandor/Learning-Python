@@ -1,0 +1,36 @@
+#===============================================================================
+#                Flask
+#===============================================================================
+#================Najprostszy server:
+# from flask import Flask
+# app = Flask(__name__)
+# @app.route("/")
+# def hello():
+#     return ":* :* :* :* a kuku ruku :*"
+# # if __name__ == "__main__":
+# #     app.run()                           
+#================Parametry w URL:
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/<name_web>")
+def name_web(name_web):
+    return "Hello " + name_web + "!"
+
+@app.route("/zmienne/<string:zmienne_name>")
+def name(zmienne_name=):
+    return "Hello " + zmienne_name + "!"
+
+
+
+if __name__ == "__main__":
+    app.run()                           
+
+
+
+
+
+
+#===============================================================================
+#                Koniec
+#===============================================================================

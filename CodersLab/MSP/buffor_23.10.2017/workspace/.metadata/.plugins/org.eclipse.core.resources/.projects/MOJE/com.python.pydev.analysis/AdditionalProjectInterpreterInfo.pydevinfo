@@ -1,0 +1,34 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/MOJE/com.python.pydev.analysis/v2_indexcache
+PDKPP.__init__|1508266901106979000|/home/bq666/workspace/MOJE/PDKPP/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+4=Critter.play
+5=Critter.eat
+3=Critter.__init__
+1=PDKPP.__init__
+2=Critter
+-- END DICTIONARY
+-- START TREE 1
+5
+a|0|
+b|0|
+cri|1|Critter!9@
+mac|0|
+mai|1|main!10@
+-- END TREE
+-- START TREE 2
+10
+__i|1|__init__!2&10@
+__p|1|__pass_time!2&10@
+__s|1|__str__!2&10@
+bor|2|boredom!3&11@boredom!4&11@
+eat|1|eat!2&10@
+hun|2|hunger!3&11@hunger!5&11@
+moo|1|mood!2&10@
+nam|1|name!3&11@
+pla|1|play!2&10@
+tal|1|talk!2&10@
+-- END TREE

@@ -1,0 +1,31 @@
+from mysql.connector import connect, cursor
+from mysql.connector.errors import ProgrammingError
+from mysql.connector.errors import InterfaceError
+     
+
+
+def connect_to_db(db_name):
+    username = "root"
+    passwd = "coderslab"
+    hostname = "127.0.0.1"
+    #db_name = "exercises_db"
+    
+    try: 
+        cnx = connect(user = username, password = passwd, host = hostname, database = db_name)
+        cnx.autocommit = True #<--------------------------
+        cursor = cnx.cursor()
+        cursor.execute(sql_create_db)
+        slownik = {"ilosc": 6, "cena": 6.66}
+        sql_create_db = """insert into Bilet(ilosc, cena) values({},{})""".format(slownik["ilosc"],slownik["cena"])
+#         cnx.commit() <--------------------------
+#         cursor.close()
+#         cnx.close()        
+        print("Połączenie gotowe")
+        
+        
+    except ProgrammingError as e:        #except ProgramingError as e:
+        print(e)                        #"Nieudane połączenie")# print(e)
+    except InterfaceError:
+        print("Zła nazwa hosta")    
+    return(cnx)
+

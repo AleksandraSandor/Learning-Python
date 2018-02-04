@@ -1,0 +1,53 @@
+#===============================================================================
+#                Flask
+#===============================================================================
+#================Najprostszy server:
+# from flask import Flask
+# app = Flask(__name__)
+# @app.route("/")
+# def hello():
+#     return ":* :* :* :* a kuku ruku :*"
+# # if __name__ == "__main__":
+# #     app.run()                           
+#================Parametry w URL:
+from flask import Flask
+from flask import request
+app = Flask(__name__)
+
+@app.route("/<name_web>")
+def name_web(name_web):
+    return "Hello " + name_web + "!"
+
+@app.route("/zmienne/<string:zmienne_name>/<int:zmienne_int>/<float:zmienne_float>")
+def name_zmienne(zmienne_name,zmienne_int,zmienne_float):   #path <--- w srodku parametru dopuszczalne są znaki /
+    return "Hello " + zmienne_name + " ! " + str(zmienne_int) + " " + str(zmienne_float)
+
+@app.route("/log", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return """<html><body>
+                Zgadnij jaką godzinę mam na myśli
+                <form action = "/" method = "POST">
+                     Godzina <input type = "int" name = "godzina"/>
+                     <p>:</p>
+                     Minuty <input type = "int" name = "minuty"/>
+                     <input type = "submit">Wyślij</input>        
+                </form>         
+                </body></html>"""
+    elif request.method == "POST":
+        godzina = request.form["godzina"]
+        minuty = request.form["minuty"]
+        return("Prób zalogowania - lgn: {} pwd: {}".format(godzina,minuty))
+
+
+if __name__ == "__main__":
+    app.run()                                      
+
+
+
+
+
+
+#===============================================================================
+#                Koniec
+#===============================================================================

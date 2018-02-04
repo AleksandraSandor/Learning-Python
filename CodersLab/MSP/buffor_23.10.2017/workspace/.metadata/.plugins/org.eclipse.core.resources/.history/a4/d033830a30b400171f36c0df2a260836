@@ -1,0 +1,75 @@
+#===============================================================================
+#                 Klasy
+#===============================================================================
+class Auto:
+    name = "Honda"
+    __silnik = "v6"
+    def __init__(self):
+        print("Nowe auto")
+    def print_info(self):
+        print(self.__silnik)
+        print(self)
+    def __str__(self):
+        return("Nazwa auto " + self.name)
+
+a1 = Auto()
+a2 = Auto()
+
+# print(a1.name)
+# print(a2.name)
+# print(a1._Auto__silnik)         
+# a1.name = "Audi"
+# print(a1.name)
+# a1.print_info()
+# a1.print_info()
+#print(a1)
+
+# __init__()    
+# __new__()    
+# __str__()    
+# __repr__()    
+# __unicode__()    
+# __eq__()    
+# __call__()    
+# __del__()    
+# __name__()    
+# __setattr__()    
+# __len__()    
+# __add__()    
+# __div__()    
+# __int__()    
+# __get__()    
+# __set__()
+#===============================================================================
+#         Dziedziczenie
+#===============================================================================
+class Book:
+    name = "Hobbit"
+    price = 33.33
+    autor = "Ble ble"
+     
+# class Ebook:
+#     name = "Hobbit"
+#     price = 33.33
+#     autor = "Ble ble"
+#     size_in_mg = 12
+     
+class Ebook(Book):
+    size_in_mb = 12
+    
+    def __str__(self):
+        return(name + str(price) + autor + str(size_in_mb))
+     
+#print("-----------------------------")
+a = Ebook()
+#print(a.name)
+ 
+
+
+
+#-------------------------------STR. 40 !!!!
+
+
+
+
+

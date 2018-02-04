@@ -1,0 +1,8 @@
+class user:
+    def __init__(self):
+        self.id = None
+        self.email = None
+        self.user = None
+        self.hashed_password = None
+        
+    

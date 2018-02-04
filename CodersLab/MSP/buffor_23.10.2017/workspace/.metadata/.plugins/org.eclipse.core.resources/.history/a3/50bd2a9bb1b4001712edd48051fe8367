@@ -1,0 +1,77 @@
+# Zadanie 1 – zadania rozwiązywane z wykładowcą# 
+# Napisz zapytania SQL, żeby wypełnić każdą tabelę w bazie danych o nazwie exercises_db
+# co najmniej kilkoma wpisami. Napisz funkcję, która przyjmie słownik z odpowiednimi
+#  parametrami i będzie dodawała nowe produkty do bazy danych.
+from mysql.connector import connect, cursor
+from mysql.connector.errors import ProgrammingError
+from mysql.connector.errors import InterfaceError
+     
+
+
+def connect_to_db(db_name):
+    username = "root"
+    passwd = "coderslab"
+    hostname = "127.0.0.1"
+    #db_name = "exercises_db"
+    
+    try: 
+        cnx = connect(user = username, password = passwd, host = hostname, database = db_name)
+        cnx.autocommit = True #<--------------------------
+        cursor = cnx.cursor()
+        slownik = {"ilosc": 2, "cena": 4.44}
+        sql_create_db = """insert into Bilet(ilosc, cena) values({},{})""".format(slownik["ilosc"],slownik["cena"])
+        cursor.execute(sql_create_db)
+        # cnx.commit() <--------------------------
+        cursor.close()
+        cnx.close()        
+        print("Połączenie gotowe")
+        
+        
+    except ProgrammingError as e:        #except ProgramingError as e:
+        print(e)                        #"Nieudane połączenie")# print(e)
+    except InterfaceError:
+        print("Zła nazwa hosta")    
+    return(cnx)
+
+
+
+
+connect_to_db("cinemas_db")
+#===============================================================================
+#             Rafała
+#===============================================================================
+# 
+# from mysql.connector import connect
+# 
+# # Function that connects to db
+# def connect_to_db(db_name):
+#     cnx = connect(user="root", password="", host="localhost", database=db_name)
+#     cnx.autocommit = True
+#     return cnx
+# 
+# # Function that creates connection and inserts stuff from parameter
+# def insert_into_product(slownik):
+#     cnx = connect_to_db("exercises_db")
+#     cur = cnx.cursor()
+#     sql = """INSERT INTO product(name, description, price) 
+#              VALUES('{}', '{}', {})""".format(slownik["name"],
+#                   slownik["description"],
+#                   slownik["price"])
+# 
+#     cur.execute(sql)
+#     cur.close()
+#     cnx.close()
+# 
+# # Prepare data to be inserted
+# slow = {"name":"dlugopis", "description":"fajny", "price": 2.5}
+# 
+# # Call function that inserts stuff
+# insert_into_product(slow)
+# print("Stuff inserted")
+#===============================================================================
+# 
+#===============================================================================
+
+# for i in slownik:    
+#     for ii in slownik[i]:
+#         print(i, ii)       

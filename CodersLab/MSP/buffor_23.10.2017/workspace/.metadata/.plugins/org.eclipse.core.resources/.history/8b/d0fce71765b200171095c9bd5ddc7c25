@@ -1,0 +1,42 @@
+# Zadanie 4.
+# 
+# Stwórz klasę Employee, która ma spełniać następujące wymogi:
+# 
+# Mieć atrybuty:
+# id - atrubyt ten powinien trzymać numer identyfikacyjny pracownika,
+# first_name - atrybut określający imię pracownika,
+# last_name - atrybut określający nazwisko pracownika,
+# salary - atrybut określający ile pracownik zarabia za godzinę.
+# Posiadać konstruktor przyjmujący id, imię, nazwisko i płace za godzinę.
+# Posiadać metodę raise_salary(percent) której rolą będzie zwiększenie wartości atrybutu salary o podany procent. Pamiętaj o sprawdzeniu czy podana wartość jest:
+# Wartością numeryczną,
+# Wieksza (lub równa) od 0.0
+
+class Employee:
+    def __init__(self, id_employ, first_name, last_name, salary = 0):
+        self.id_employ = id_employ
+        self.first_name = first_name
+        self.last_name = last_name
+        self.salary = salary
+    def raise_salary(self, percent):
+        try:
+            self.percent = float(percent)
+            if(self.percent > 0):
+                self.salary += self.percent
+        except:
+            return("Błędna wartość")
+    def wszystkie(self):
+        print(self.id_employ)
+        print(self.first_name)
+        print(self.last_name)
+        print(self.salary)
+        
+        
+        
+        
+        
+a = Employee(1, "Stefan","Stefanowicz")
+a.raise_salary(12)
+print(vars(a))
+a.wszystkie()
+            

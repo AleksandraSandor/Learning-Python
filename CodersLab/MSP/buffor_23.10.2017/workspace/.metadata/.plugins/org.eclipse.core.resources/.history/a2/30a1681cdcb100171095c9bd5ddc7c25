@@ -1,0 +1,44 @@
+
+
+
+def format_date(day,month,year):
+    day = int(day)
+    month = int(month)
+    year = int(year)
+    if((year <= 0) and (year >= 13)):
+        return None
+    if((month == 2) and (day >= 29)):
+        return None
+    if((day <= 0) and (day >= 32)):
+        return None
+    if(((month == 4) or (month == 6) or (month == 9) or (month == 11)) and (day >= 31)):
+        return None
+    if(month == 1):
+        month = "Stycznia"
+    if(month == 2):
+        month = "Lutego"
+    if(month == 3):
+        month = "Marca"
+    if(month == 4):
+        month = "Kwietnia"
+    if(month == 5):
+        month = "Maja"
+    if(month == 6):
+        month = "Czerwca"
+    if(month == 7):
+        month = "Lipca"
+    if(month == 8):
+        month = "Sierpnia"
+    if(month == 9):
+        month = "Września"
+    if(month == 10):
+        month = "Października"
+    if(month == 11):
+        month = "Listopada"
+    if(month == 12):
+        month = "Grudnia"
+    return(day+month+year)
+
+a = format_date(3, 4, 2004)
+print(a)    
+    

@@ -1,0 +1,8 @@
+W pythonie: Listy
+W pythonie: Stringi
+W pythonie: Dictionary
+W pythonie: Funkcje
+W pythonie: Class
+W pythonie: Pliki
+W pythonie: Wyjatki
+

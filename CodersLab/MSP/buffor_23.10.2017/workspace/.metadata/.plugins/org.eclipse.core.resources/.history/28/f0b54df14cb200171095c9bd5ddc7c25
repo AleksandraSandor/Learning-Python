@@ -1,0 +1,17 @@
+class Calculator:
+    marka_kalkulatora = "brak"
+    memory = list()
+    def __init__(self,marka):
+        self.marka_kalkulatora = marka
+        print("tworzenie obiekt klasy Calkulator")
+        
+    def add(self, num1, num2):
+        self.memory.append("added " + str(num1) + "to " + str(num2) + " got " + str(num1 + num2))
+        return(num1+num2)
+        
+
+c = Calculator("TexasInstruments")
+print(c.marka_kalkulatora)
+print(vars(c))      #drukuje co jest w klasie
+print(c.memory)
+

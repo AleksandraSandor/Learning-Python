@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Contact List - Contact List App{% endblock %}
+{% block content %}
+    <h1>Contact add: </h1>
+    <form method='post'>
+        <p>Name:<input type ='text' name='name'/></p>
+        <p>Surname:<input type ='text' name='surname'/></p>
+        <p>Description:<textarea name ='description'></textarea></p>
+        <p>input<input type='submit'/></p>
+        {% csrf_token %}
+    </form>
+{% endblock %}
+
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SCIAGA/D4_HTML_Flask/HTML&apos; to &apos;HTML i CSS&apos;" description="Rename resource &apos;HTML&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="D4_HTML_Flask/HTML" name="HTML i CSS" stamp="1508072366652" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;SCIAGA/D4_HTML_Flask/HTML i CSS&apos; to &apos;HTML &apos;" description="Rename resource &apos;HTML i CSS&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="D4_HTML_Flask/HTML i CSS" name="HTML " stamp="1508072379718" updateReferences="true"/>
+</session>

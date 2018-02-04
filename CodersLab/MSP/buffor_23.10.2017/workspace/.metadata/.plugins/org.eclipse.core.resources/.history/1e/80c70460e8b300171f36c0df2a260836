@@ -1,0 +1,13 @@
+from mysql.connector import connect
+from mysql.connector.errors import ProgrammingError
+username = "root"
+passwd = "coderslab"
+hostname = "127.0.0.2"
+db_name = "sql_cwiczenia"
+# cnx = connect(user="root", password="coderslab", host="127.0.0.1")
+# cnx.close()
+try: 
+    cnx = connect(user = username, password = passwd, host = hostname)#  database = db_name)
+    print("Połączenie gotowe")
+except ProgrammingError:
+    print("Nieudane połączenie")

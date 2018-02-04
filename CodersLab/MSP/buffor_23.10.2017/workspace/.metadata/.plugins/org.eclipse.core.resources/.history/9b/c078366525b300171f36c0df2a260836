@@ -1,0 +1,27 @@
+# Zadanie 2 – generator
+# 
+# Napisz funkcję generatora roll, która zwróci dokładnie 10 rzutów koścmi.
+
+
+import random
+
+
+class Dice:
+    def __init__(self, dice_type):
+        if dice_type in [3, 4, 6, 8, 10, 12, 20, 100]:
+            self.dice_type = dice_type
+            
+        else:
+            print("Zły dice type")
+    def roll(self):
+         print(random.randint(1,self.dice_type))
+
+a = Dice(100)
+a.roll()
+
+
+def roll():
+    for i in range(1,10):
+        print(a.roll())
+        
+roll()

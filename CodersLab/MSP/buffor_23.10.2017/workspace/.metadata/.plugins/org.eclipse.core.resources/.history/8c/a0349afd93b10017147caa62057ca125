@@ -1,0 +1,22 @@
+#===============================================================================
+#                 Wyjatki
+#===============================================================================
+a = "test"
+arr = [1,2]
+dane_w_tupli = (1, 2, 3, 4, 5)
+tupla = (1, 2, 3)
+#dane_w_tupli = dane_w_tupli + 1
+
+try:
+    print("test" + "42")                #print("test" + 42)
+    print(arr[1])                       #print(arr[3])
+    dane_w_tupli = dane_w_tupli + tupla #dane_w_tupli = dane_w_tupli + tupl
+    print(dane_w_tupli)     
+except TypeError:
+    print("zły typ zmiennej")
+except NameError:
+    print("zła nazwa tupli")
+except ValueError:
+    print("to nie jest liczba")
+# except Exception:   # Dowolny błąd
+#     print("coś zpatroliłeś")

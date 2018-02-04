@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--{% if formm.non_field_errors %}-->
+<!--Błędy: {{ formm.non_field_errors}}-->
+<!--{% endif %}-->
+
+<form method="post" action="">
+    {% csrf_token %}
+    {% for field in formm %}
+        <strong style="color: red">{{ field.label }}</strong><br>
+        {{ field }}<br>
+        {{ field.errors }}
+    {% endfor %}
+    <button type="submit">Wyślij</button>
+</form>
+</body>
+</html>

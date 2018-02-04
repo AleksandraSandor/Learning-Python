@@ -1,0 +1,56 @@
+# Używając Flaska, napisz stronę, która usunie film/kino/płatnośc/bilet o podanym id (zarówno
+# informacje, z której tabeli jak i id powinno być przekazane do strony za pomocą metody GET).# 
+# Strona powinna wyświetać informacje o usunięciu wpisu z tabeli.# 
+# Na co zwrócić uwagę:# 
+# Przeanalizuj program C2.py. Zawiera on szkielet rozwiązania. Program ma komendę --help,
+# która zwraca jakie paramtery są przyjmowane i jakiego typu powinny być. 
+# Sprawdź również funkcję set_options() programu. 
+# Wszystkie parametry znajdują się w zmiennej options, która jest przekazywana do funkcji
+# solution(). Jeśli chcesz podejrzeć, jak wygląda zawartość tej zmiennej, w funkcji solution()
+# wypisz zawartość tej zmiennej. 
+# Program rozwiąż w funkcji solution().
+
+from flask import Flask, request
+from mysql.connector import connect
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="coderslab", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+        <head>
+            <title>Deletion</title>
+        </head>
+        <body>
+            {}
+        </body>
+    </html>
+    """
+    try:
+        #sql = "DELETE FROM product WHERE id={};".format(my_id)
+        #sql = "delete from {} where id = {}"
+        #my_id = request.args.get("id")
+        cnx = connect_to_db("cinemas_db")
+        cur = cnx.cursor()
+        table = request.args.get("table")
+        id = request.args.get("id")
+        print(table)
+        print(id)
+        sql = "delete from {} where id = {};".format(table,id)
+        cur.execute(sql)
+        html = html.format("Usunięto pozycję")        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()

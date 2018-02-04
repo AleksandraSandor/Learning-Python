@@ -1,0 +1,122 @@
+# Zadanie 2 – zadania rozwiązywane z wykładowcą
+# Używając Flaska, napisz program, który wyświetli na stronie wszystkie produkty znajdujące się
+#  w bazie danych o nazwie exercises_db.
+# Podpowiedź: Program powinien uruchamiać zapytanie SQL, które wybiera wszystkie wpisy
+#  z odpowiedniej tabeli, po czym wyświetla je na ekranie.
+# 
+# 
+# from flask import Flask
+# app = Flask(__name__)
+# 
+# from mysql.connector import connect, cursor
+# from mysql.connector.errors import ProgrammingError
+# from mysql.connector.errors import InterfaceError
+# from html import format
+#     
+# def connect_to_db(db_name):
+#     username = "root"
+#     passwd = "coderslab"
+#     hostname = "127.0.0.1"
+#     #db_name = "exercises_db"
+#     
+#     try: 
+#         cnx = connect(user = username, password = passwd, host = hostname, database = db_name)
+#         cnx.autocommit = True
+#         cursor = cnx.cursor()
+#         
+#         cursor.execute(sql_create_db)
+#         #cnx.commit()        <--- jest automatic
+#         cursor.close()
+#         cnx.close()        
+#         print("Połączenie gotowe")
+#         
+#         
+#     except ProgrammingError:        #except ProgramingError as e:
+#         print("Nieudane połączenie")# print(e)
+#     except InterfaceError:
+#         print("Zła nazwa hosta")    
+#     return(cnx)
+# 
+# 
+# 
+# 
+# 
+# @app.route("/")
+# def main_page():
+#     html = """
+#     <html>
+#     <head>
+#     <title>Products in exte.........
+#     </head>
+#     <body>
+#     
+#     </body>
+#     </html>
+#     """
+#     try:
+#         cnx = connect_to_db("exercises_db")
+#         cur = cnx.cursor()
+#         cur.execute("SELECT * FROM product;")
+#         content = ""
+#         for row in cur:
+#             content += "{} {} {} {}<br>".format(row[0], row[1], row[2], row[3]) #row + "</bry>"
+#         
+#         html.format(content)
+#             
+#         cur.close()
+#         cnx.close()
+#     except Exception as e:
+#         print("An error occurred")
+#         print(e)
+#         
+# 
+# 
+# app.run()
+
+#===============================================================================
+#             RAFAŁA 
+#===============================================================================
+# poprawione uzycie metody html.format() - linia 33
+from flask import Flask
+from mysql.connector import connect
+#from html import 
+
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="coderlabs", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+    <head>
+    <title>Client in exercises_db</title>
+    </head>
+    <body>
+        <h1>Client in exercises_db</h1>
+        {}
+    </body>
+    </html>
+    """
+    try:
+        cnx = connect_to_db("exercises_db")
+        cur = cnx.cursor()
+        cur.execute("SELECT * FROM Client;")
+        content = ""
+        for row in cur:
+            content += "{} {} </br>".format(row[0],row[1]) #,row[2],row[3])            
+        html = html.format(content)        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()
+

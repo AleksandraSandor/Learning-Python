@@ -1,0 +1,7 @@
+MODULES_MANAGER_V2
+app.__init__|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/app/__init__.py
+app.user_test|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/app/user_test.py
+db.__init__|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/db/__init__.py
+db.db|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/db/db.py
+model.User|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/model/User.py
+model.__init__|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/model/__init__.py

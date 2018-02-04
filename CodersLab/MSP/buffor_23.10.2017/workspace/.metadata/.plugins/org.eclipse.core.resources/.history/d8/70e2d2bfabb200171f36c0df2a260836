@@ -1,0 +1,76 @@
+#===============================================================================
+#         R8.1 Prosty zwierzak
+#===============================================================================
+# class Critter(object):
+#     """Wirtualny pupil"""
+#     total = 0
+#     
+#     @staticmethod
+#     def status():
+#         print("Liczba zwierzaków:", Critter.total)    
+#     
+#     def __init__(self, name):
+#         print("Urodził się nowy zwierzak")
+#         self.name = name    
+#         Critter.total += 1
+#     def __str__(self):
+#         rep = "Obiekt klasy Critter\n"
+#         rep += "name: " + self.name + "\n"
+#         return rep    
+#     def talk(self):
+#         print("Cześć ! Jestem ", self.name)
+# 
+#         
+# 
+# #-------Część główna programu:
+# 
+# 
+# crit = Critter("Maniek")
+# crit2 = Critter("Paniek")
+# crit.talk()
+# crit2.talk()
+# #print(crit)
+# print(crit)
+# 
+# print(Critter.total)
+# print(crit2.total)
+# crit2.status()
+# Critter.total = 10
+# crit2.status()
+# Critter.status()
+#===============================================================================
+#         R8.2 Prywatny zwierzak
+#===============================================================================
+from os import name
+class Critter(object):
+    total = 0
+    
+    @staticmethod
+    def status():
+        print("Aktualnie jest",Critter.total, "zwierzaków")
+        
+    def __init__(self,name,mood = "Angry"):
+        print("Urodził się nowy zwierzak!")
+        self.name = name
+        self.__mood = mood
+        Critter.total += 1
+    def talk(self):
+        print("Jestem", self.name)
+        print("W tej chwili czuje się ", self.__mood)
+        self.__mood = "Happy"
+    def __prywatna(self):
+        print("Metoda prywatna")
+    def metoda(self):
+        print("Metoda publicza")
+        self.__prywatna()
+    
+    
+    
+    
+zwierzak1 = Critter("Staś")
+zwierzak1.metoda()
+zwierzak1.__prywatna()  
+Critter.status()
+zwierzak1.talk()
+zwierzak1.name = "Pierd"
+zwierzak1.talk()

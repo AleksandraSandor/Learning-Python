@@ -1,0 +1,44 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/KRA_PYT_S_02_Warsztaty_2/com.python.pydev.analysis/v2_indexcache
+db.db|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/db/db.py
+app.user_test|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/app/user_test.py
+model.__init__|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/model/__init__.py
+model.User|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/model/User.py
+app.__init__|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/app/__init__.py
+db.__init__|1508569113000000000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_2/db/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+2=db.db
+1=app.user_test
+4=User
+6=User.hashed_password
+7=User.__init__
+5=User.email
+3=model.User
+8=User.save
+9=User.username
+-- END DICTIONARY
+-- START TREE 1
+4
+cnx|1|cnx!11@
+con|1|connect_to_db!18@
+cur|1|cur!11@
+use|2|user_from_db!11@User!25@
+-- END TREE
+-- START TREE 2
+12
+__i|1|__init__!4&26@
+_em|1|_email!5&27@
+_ha|1|_hashed_password!6&27@
+_id|2|_id!7&27@_id!8&27@
+_ta|1|_TABLE_NAME!4&27@
+_us|1|_username!9&27@
+ema|2|email!4&26@email!7&27@
+has|2|hashed_password!4&26@hashed_password!7&27@
+id|1|id!4&26@
+loa|1|load_by_id!4&26@
+sav|1|save!4&26@
+use|2|username!7&27@username!4&26@
+-- END TREE

@@ -1,0 +1,26 @@
+n = input("Podaj n:")
+n = int(n)
+
+
+def chessboard (n=8):
+    is_white = True
+    white_field = ' '
+    black_field = '#'
+    
+    for i in range(0, n):
+        if i % 2 == 0:
+            is_white = True
+        else:
+            is_white = False
+        row = ''
+        for x in range(0, n):
+            if is_white:
+                row += white_field
+            else:
+                row += black_field
+            is_white = not is_white
+        print(row)
+    
+    
+chessboard(n)
+    

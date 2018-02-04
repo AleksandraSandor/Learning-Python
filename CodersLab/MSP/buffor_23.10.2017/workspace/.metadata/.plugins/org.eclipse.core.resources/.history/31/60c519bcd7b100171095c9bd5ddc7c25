@@ -1,0 +1,20 @@
+lista = [1, 2, "abc", " ", "10.10"]
+tupla = (9, 8, "def", '"', "99.99")
+
+
+def find_first_and_last(lista_lub_tupla):
+    pierwszy = lista_lub_tupla[0]
+    ostatni = lista_lub_tupla[len(lista_lub_tupla) - 1]
+    nowa_tupla = ()
+    
+    #nowa_tupla = nowa_tupla + tuple(pierwszy) + tuple(ostatni)
+    #print(type(ostatni))
+     
+find_first_and_last(lista)
+
+
+# a = len(lista) - 1
+# print(a)
+# a -= 1
+# print(lista[a])
+# print(type(tupla))

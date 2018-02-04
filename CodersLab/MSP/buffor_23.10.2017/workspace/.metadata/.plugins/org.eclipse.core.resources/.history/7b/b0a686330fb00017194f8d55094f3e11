@@ -1,0 +1,26 @@
+from random import randint
+
+a = input("Podaj 6 liczb do losowania oddzielone spacją:")
+split.a
+
+print(b)
+
+
+
+
+# from random import randint
+# 
+# def Podaj_liczbe():
+#     test = False
+#     liczba = 0
+#     while(test == False):    
+#         try:        
+#             liczba = int(input("Zgadnij liczbę:"))
+#             test = True            
+#         except ValueError:
+#             print("Podałeś stringa zamiast liczby")
+#         if((liczba < 1) or (liczba > 100)) and (test == True):
+#             print("Podałeś liczbę z poza zakresu")
+#             test = False    
+#         if(test == True):
+#             return(int(liczba))

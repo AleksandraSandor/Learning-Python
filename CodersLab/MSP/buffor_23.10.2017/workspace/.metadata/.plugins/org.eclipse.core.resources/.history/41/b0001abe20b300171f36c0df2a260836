@@ -1,0 +1,39 @@
+# 
+# class Numbers:
+#     def __iter__(self):
+#         self.counter = 0
+#         print("wywołanie __iter__")
+#         return self
+#     def __next__(self):
+#         if self.counter >= 5:
+#             raise StopIteration
+#         self.counter +=1
+#         return self.counter
+#      
+#      
+# numbers = Numbers()
+# for num in numbers:
+#     print(num)
+
+# def jedi_generator():
+#     jedis = ["Obi-Wan","Anakin","Qui-Gon","Yoda","Luke"]
+#     for person in jedis:
+#         yield person 
+# 
+#     
+# for jedi in jedi_generator():
+#     print(jedi)
+
+def jedi_generator()::
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    
+jedi = jedi_generator()
+print(jedi)
+    
+    
+    
+    
+    

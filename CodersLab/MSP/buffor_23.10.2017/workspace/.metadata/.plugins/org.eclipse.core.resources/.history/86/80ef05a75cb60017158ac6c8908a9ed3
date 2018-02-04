@@ -1,0 +1,60 @@
+from audioop import avgpp
+print("Hello World")
+a = "to jest tekst do testu"
+print(a)
+print(a.title())
+print(a.upper())
+print(a.lower())
+
+mac = "to ta ta to"
+mac_upper = mac.upper()
+print(mac_upper)
+print(mac)
+
+a = "     sratatata     r  "
+print(a)
+print(a.rstrip())
+print(a.lstrip())
+print(a.strip())
+
+a = ["a", "b", "c", "d"]
+print(a)
+a.append("e") #<--- dodaje na końcu 
+print(a)
+a.insert(3, "e") #<--- dodaje w konkretny index
+#print(a)
+del a[3] #<--- usuwa i przesuwa do konkrentego indexu
+#print(a)
+a.pop(3) #<--- usuwa i przesuwa do konkrentego indexu
+print(a)
+a.remove("b") #<--- usuwa pierwsze wystapienie 
+#print(a)
+a = ["test", "ala", "ma", "kota", "chyba"]
+#a = "co za kurwa mac"
+print(a)
+a.sort(key=None, reverse=False)  #<--- sortuje na stale, tylko listy itp. 
+print(a)
+a = ["honda", "sronda", "fiat", "audi"]
+b = sorted(a) #<--- sortuje ale nie zmienia kolejności na stałe 
+print(b)
+print(a)
+b = b.reverse()
+print(b)
+a = list(range(1,16))
+print(a)
+a = list(range(0,101,5))
+print(a)
+print(max(a))
+print(min(a))
+print(sum(a))
+print(sum(a)/len(a))
+a = [2 ** i for i in range (1, 11)]
+b = "testowanie"
+print(b)
+print(a, b)
+
+imie = "stefania stefanowska"
+print("Witaj " + imie.upper()() + " co dzisiaj robimy?")
+
+
+

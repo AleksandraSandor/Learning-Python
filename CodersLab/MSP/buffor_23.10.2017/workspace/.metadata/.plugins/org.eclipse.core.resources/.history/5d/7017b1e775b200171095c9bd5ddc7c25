@@ -1,0 +1,54 @@
+class Calculator:
+#     marka_kalkulatora = "brak"
+#     memory = []
+    def __init__(self,marka):
+        self.marka_kalkulatora = marka
+        self.memory = []
+        print("tworzenie obiekt klasy Calkulator")
+        
+    def add(self, num1, num2):
+        result = num1 + num2
+        self.memory.append("added " + str(num1) + " to " + str(num2) + " got " + str(result))
+        return(result)
+    
+    def multiply(self, num1, num2):
+        result = num1 * num2
+        self.memory.append("multiplet " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def subtract(self, num1, num2):
+        result = num1 - num2
+        self.memory.append("subtract " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def divide(self, num1, num2):
+        result = num1 / num2
+        self.memory.append("divide " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def clear_operations(self):
+        self.memory = []
+    
+    def print_operations(self):
+        print(" \n".join(self.memory))
+
+
+class AdvancedCalculator(Calculator):
+    def __init__(self):
+        super(AdvancedCalculator,self).__init__("sony")
+        print("tworzenie obiekt klasy AdvancedCalculator")
+    def pow(self, num1,num2):
+        result = num1 ** num2
+        self.memory.append(str(num1) + " rised to " + str(num2) + " equls " + str(result)) 
+        return(result)
+
+ac = AdvancedCalculator()
+print(vars(ac))
+ac.multiply(1, 2)
+ac.pow(2, 2)
+print(vars(acs))
+
+
+
+
+

@@ -1,0 +1,10 @@
+from flask import Flask
+from flask import request
+
+app = Flask(__name__)
+
+@app.route("/licz/<int:l1>/<int:l2>")
+def dodawanie_page(l1,l2):
+    return str(l1 + l2)
+
+app.run()

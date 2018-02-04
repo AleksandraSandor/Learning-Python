@@ -1,0 +1,42 @@
+from random import randint
+
+a = input("Podaj 6 liczb do losowania oddzielone spacją:")
+a = a.split() 
+a1 = int(a[0])
+a2 = int(a[1])
+# a3 = int(a[2])
+# a4 = int(a[4])
+# a5 = int(a[5])
+print(a5)
+
+# def podaj_liczby():
+#     test = False
+#     while(test == False):
+#         try:
+#             a1 = int(a[0])
+#             a2 = int(a[1])
+#             a3 = int(a[2])
+#             a4 = int(a[4])
+#             a5 = int(a[5])
+#             
+#         except Exception
+            
+
+
+
+# from random import randint
+# 
+# def Podaj_liczbe():
+#     test = False
+#     liczba = 0
+#     while(test == False):    
+#         try:        
+#             liczba = int(input("Zgadnij liczbę:"))
+#             test = True            
+#         except ValueError:
+#             print("Podałeś stringa zamiast liczby")
+#         if((liczba < 1) or (liczba > 100)) and (test == True):
+#             print("Podałeś liczbę z poza zakresu")
+#             test = False    
+#         if(test == True):
+#             return(int(liczba))

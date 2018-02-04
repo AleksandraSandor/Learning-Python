@@ -1,0 +1,72 @@
+# class Example:
+#     number = 0
+#     
+#     #@number_squared.setter
+#     #@property
+#     def number_squared(self):
+#         return self.number ** 2
+#     
+# e = Example()
+# e.number = 2
+# print(e.number)
+# 
+# print(e.number_squared)
+
+class Calculator:
+#     marka_kalkulatora = "brak"
+#     memory = []
+    def __init__(self,marka):
+        self.marka_kalkulatora = marka
+        self.memory = []
+        print("tworzenie obiekt klasy Calkulator")
+        
+    def add(self, num1, num2):
+        result = num1 + num2
+        self.memory.append("added " + str(num1) + " to " + str(num2) + " got " + str(result))
+        return(result)
+    
+    def multiply(self, num1, num2):
+        result = num1 * num2
+        self.memory.append("multiplet " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def subtract(self, num1, num2):
+        result = num1 - num2
+        self.memory.append("subtract " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def divide(self, num1, num2):
+        result = num1 / num2
+        self.memory.append("divide " + str(num1) + " to " + str(num2) + " got " + str(result)) 
+        return(result)
+
+    def clear_operations(self):
+        self.memory = []
+    
+    def print_operations(self):
+        print(" \n".join(self.memory))
+
+
+class AdvancedCalculator(Calculator):
+    PI = 3.14159265
+    def __init__(self):
+        super(AdvancedCalculator,self).__init__('Sony')
+        print('tworze obiekt klasy AdvancedCalculator')
+    def pow(self, num1, num2):
+        result =num1**num2
+        self.memory.append(str(num1)+"rised to "+str(num2)+" equals "+str(result))
+        return result
+    def root(self, num1, num2):
+        result =num1**(1/num2)
+        self.memory.append('root '+ str(num2)+" of "+str(num1)+" equals "+str(result))
+        return result
+    #@staticmethod
+    def compute_circle_radius(r):
+        return AdvancedCalculator.PI*r**2
+
+
+a = AdvancedCalculator()
+print(AdvancedCalculator.compute_circle_radius(10))
+print(a.compute_circle_radius(10))
+
+    

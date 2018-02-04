@@ -1,0 +1,10 @@
+class Shape:
+    __x = 10
+    __y = 20
+    color = None
+    ksztalt = []
+    def __init__(self,__x, __y, color):
+        self.ksztalt.append(__x,__y,color)
+        
+        
+test.shape()

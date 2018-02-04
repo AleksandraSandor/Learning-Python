@@ -1,0 +1,14 @@
+from flask import Flask
+from flask import request
+from time import localtime, strftime
+import datetime
+
+app = Flask(__name__)
+
+@app.route("/")
+def getdate_page():
+    return "Aktualna data: {}".format(str(datetime.date.today()))
+
+
+if __name__ == "__main__":
+    app.run()

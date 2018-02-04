@@ -1,0 +1,70 @@
+
+from flask import Flask
+from mysql.connector import connect
+
+
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="coderslab", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/add_movie")
+def add_movie_page():
+    html = """
+    <html>
+    <head>
+    <title>Client in exercises_db</title>
+    </head>
+    <body>
+       <form method='POST'>
+           Name <input type='text' name='name' />
+           Description <input type='text' name='description' />
+           Rating <input type='number' name='number' />
+           <input type = 'submit' />
+    </body>
+    </html>
+        """
+    return html
+
+
+
+
+# def add_movie_page_post():
+#     sql = "INSERT INTO moviwes VALUES(DEFAULT, 
+
+
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+    <head>
+    <title>Client in exercises_db</title>
+    </head>
+    <body>
+        <h1>Client in exercises_db</h1>
+        {}
+    </body>
+    </html>
+    """
+    try:
+        cnx = connect_to_db("cinemas_db")
+        cur = cnx.cursor()
+        cur.execute("SELECT * FROM Client;")
+        content = ""
+        for row in cur:
+            content += "{} {} </br>".format(row[0],row[1]) #,row[2],row[3])            
+        html = html.format(content)        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()
+

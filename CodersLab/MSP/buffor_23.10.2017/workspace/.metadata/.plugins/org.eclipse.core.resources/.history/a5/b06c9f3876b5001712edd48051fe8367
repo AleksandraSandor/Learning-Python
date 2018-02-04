@@ -1,0 +1,41 @@
+# Zadanie 4
+# (5 pkt) Napisz program w Pythonie klasy VIPUser. Klasa ma spełniać następujące właściwości:
+# Dziedziczyć po klasie User (zajrzyj do modułu exam).
+# Mieć dodatkowy atrybut: vip_card_number.
+# Mieć konstruktor, który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię,
+#  nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej. Konstruktor ma
+#   sprawdzać, czy podany numer jest prawidłowy. Jeżeli jest – to go nastawiać, jeżeli
+#    nie – to numer ma być nastawiony na None.
+# Mieć prywatną metodę check_card(new_number) – numer jest prawidłowy, jeżeli
+#  jest większy niż 999 i podzielny przez 2. Funkcja ma zwracać wartość logiczną.
+# Mieć publiczną metodę use_vip_card() – ciało metody może zostać puste.
+# Mieć publiczną funkcję set_vip_card_number(new_card_number) i get_vip_card_number(). Funkcja 
+# set ma nastawiać zmienną vip_card_number (jeżeli podany nowy numer spełnia założenia), a 
+# funkcja get – ją zwracać.
+
+from exam import User
+
+class VIPUser(User):
+    def __init__(self, mail, name, surname, vip_card_number):
+        super(VIPUser,self).__init__(mail, name, surname)
+        try:
+            self.vip_card_number = int(vip_card_number)
+        except:
+            self.vip_card_number = None
+        self.name = name;
+        self.surname = surname;
+        self.mail = surname;
+    def __check_card(self, new_number):
+        if ((new_number > 999) and (new_number % 2 == 0)):
+            return True
+        else:
+            return False
+    def use_vip_card(self)):
+        pass;
+    def set_vip_card_number(self new_card_number):
+        if ((new_card_number > 999) and (new_card_number % 2 == 0)):
+            self.vip_card_number = new_card_number
+        else:
+            print("Podałeś zły numer karty")        
+    def get_vip_card_number(self):
+        return self.vip_card_number

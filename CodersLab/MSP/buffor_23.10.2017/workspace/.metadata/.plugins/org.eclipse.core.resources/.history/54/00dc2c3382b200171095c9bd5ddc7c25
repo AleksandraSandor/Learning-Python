@@ -1,0 +1,28 @@
+class Employee:
+    def __init__(self, id_employ, first_name, last_name, salary = 0):
+        self.id_employ = id_employ
+        self.first_name = first_name
+        self.last_name = last_name
+        self.salary = salary
+    def raise_salary(self, percent):
+        try:
+            self.percent = float(percent)
+            if(self.percent > 0):
+                self.salary += self.percent
+        except:
+            return("Błędna wartość")
+    def wszystkie(self):
+        print(str(self.id_employ) + " " + str(self.first_name) + " " + str(self.last_name) + " " + str(self.salary))
+
+
+
+
+
+class HourlyEmployee(Employee):
+    def __init__(selfself, id, first_name, last_name, salary):
+        super(HourlyEmployee, self).__init__(id, first_name, last_name, salary)
+    def compute_payment(self, hours):
+        return hours*self.salary
+    
+    
+Zenek = HourlyEmployee(10,"Zenek", "Wnuk", 20)

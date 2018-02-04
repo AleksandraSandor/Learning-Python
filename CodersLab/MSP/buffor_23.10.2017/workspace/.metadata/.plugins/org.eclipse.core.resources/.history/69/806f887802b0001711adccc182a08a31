@@ -1,0 +1,16 @@
+from random import randint
+
+
+try:
+    liczba = int(input("Zgadnij liczbę:"))
+except ValueError:
+    print("Podałeś stringa zamiast liczby")
+except NameError:
+    print("test")
+
+
+# if (type(liczba) == int):
+#     print("OK")
+
+print(liczba)
+ 

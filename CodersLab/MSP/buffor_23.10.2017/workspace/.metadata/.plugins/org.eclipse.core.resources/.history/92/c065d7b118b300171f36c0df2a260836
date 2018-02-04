@@ -1,0 +1,88 @@
+# Zmień klasę BankAccount w taki sposób żeby konstruktor sam nadawał numer konta bankowego. Dla uproszczenia będziemy nadawać kolejne liczby całkowite zaczynając od jedynki. Zeby to zrobić:
+# 
+# Dodaj do klasy prywatny atrybut next_acc_number.
+# Nastaw jego wartość na 1.
+# Zmodyfikuj konstruktor w taki sposób żeby nie przyjmował numeru konta, tylko przypisywał wartość atrybutu next_acc_number do swojego atrybutu number, a nastepnie zwiększał next_acc_number o jeden.
+# Przetestuj jak generowane są numery twoich kont.
+# 
+# class BankAccount:
+#     number = 0
+#     def __init__(self):
+#         BankAccount.number += 1
+#         self.__number = BankAccount.number
+#         #print(BankAccount.number)
+#         self.__cash = 0.0          
+#     def get_cash(self):
+#         return self.__cash
+#     def get_number(self):
+#         return self.__number
+#     def deposit_cash(self, amount):
+#         try:
+#             amount=float(amount)
+#         except:
+#             print('amount musi byc liczba')
+#         if (amount > 0):    
+#             self.__cash += amount
+#     def withdraw_cash(self, amount):
+#         try:
+#             amount = float(amount)
+#         except:
+#             print('amount musi byc liczba')
+#         result = amount
+#         if amount > self.__cash:
+#             result = self.__cash
+#         self.__cash -= result
+#         return result  
+#     def print_info(self):
+#         print(str(self.__number) + ' ' + str(self.__cash))
+#         
+# 
+# 
+# konto_1 = BankAccount()
+# konto_2 = BankAccount()
+# print(konto_1.get_number())
+# print(konto_2.get_number())
+
+class BankAccount:
+    __next_acc_number = 0
+    def __init__(self):
+        BankAccount.number += 1
+        self.__number = BankAccount.__next_acc_number
+        #print(BankAccount.number)
+        self.__cash = 0.0          
+    @classmethod
+    def get_acc_number(cls):
+        cls.__next_acc_number += 1
+        return cls.__next_acc_number
+    def get_cash(self):
+        return self.__cash
+    def get_number(self):
+        return self.__number
+    def deposit_cash(self, amount):
+        try:
+            amount=float(amount)
+        except:
+            print('amount musi byc liczba')
+        if (amount > 0):    
+            self.__cash += amount
+    def withdraw_cash(self, amount):
+        try:
+            amount = float(amount)
+        except:
+            print('amount musi byc liczba')
+        result = amount
+        if amount > self.__cash:
+            result = self.__cash
+        self.__cash -= result
+        return result  
+    def print_info(self):
+        print(str(self.__number) + ' ' + str(self.__cash))
+        
+b = BankAccount()
+b1 = BankAccount
+b2 = BankAccount()
+b.deposit_cash(560)
+b.withdraw_cash(200)
+
+        
+        

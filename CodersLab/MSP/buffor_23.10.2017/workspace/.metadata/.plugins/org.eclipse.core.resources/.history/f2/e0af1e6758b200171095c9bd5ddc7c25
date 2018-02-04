@@ -1,0 +1,46 @@
+# Zadanie 2.
+# 
+# Stwórz klasę Shape, która ma spełniać następujące wymogi:
+# 
+# Mieć "prywatne" atrybuty: x, y (określające środek tego kształtu) i color.
+# Posiadać konstruktor przyjmujący zmienne określające wartości x, y i color. Konstruktor powinien
+#  wypisywać informacje o właśnie stworzonym kształcie. Pamiętaj o sprawdzeniu:
+# czy podane zmienne są liczbami (jeżeli nie są, to nastaw oba na 0),
+# czy podany kolor jest napisem.
+# Mieć funkcję wypisującą informacje o tym kształcie.
+# Mieć funkcję zwracającą odległość od innego kształtu.
+from turtle import __stringBody
+from Cython.Utility.MemoryView import __str__
+
+class Shape:
+    def __init__(self, x, y, color):
+        try:
+            self.__x = float(x)
+        except:
+            self.__x = 0
+        try:    
+            self.__y = float(y)
+        except:
+            self.__y = 0            
+        self.__color = str(color)
+#     def __str__(self):
+#         return str(self.__x)+" "+str(self.__y)+" "+str(self.__color)
+#     def distance(self,other):
+#         print(self.__x)
+#         print(other.__x)
+        
+    
+    
+s = Shape(1,2,"czerwony")
+print(vars(s))
+#print(s)
+    
+#     __x = 10
+#     __y = 20
+#     color = None
+#     ksztalt = []
+#     def __init__(self,__x, __y, color):
+#         self.ksztalt.append(__x,__y,color)
+#         
+#         
+# test.shape()

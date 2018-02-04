@@ -1,0 +1,69 @@
+from random import randint
+
+
+# a1 = int(a[0])
+# a2 = int(a[1])
+# a3 = int(a[2])
+# a4 = int(a[4])
+# a5 = int(a[5])
+# print(a2)
+
+def podaj_liczby():
+    test = False
+    while(test == False):
+        a = input("Podaj 6 liczb do losowania oddzielone spacją:")
+        a = a.split()
+        try:
+            for i in range(0,5):
+                if a[i] in range(1,49):
+                    print("test")
+                    if a[i] not in a:
+                        test = True
+                
+            
+
+               
+             
+        except ValueError:
+            print("Jedna dana którą podałeś nie są liczbą")
+        except IndexError:
+            print("Nie podałeś wszystkich liczb")
+        #except Exception
+            
+podaj_liczby()
+
+
+
+
+#                 if((a[0] != a[i]) and (int(a[0]) >= 0) and (int(a[0])) <= 49):                    
+#                     if((a[1] != a[i]) and (int(a[1]) >= 0) and (int(a[1])) <= 49):                    
+#                         if((a[2] != a[i]) and (int(a[2]) >= 0) and (int(a[2])) <= 49):                    
+#                             if((a[3] != a[i]) and (int(a[3]) >= 0) and (int(a[3])) <= 49):                    
+#                                 if((a[4] != a[i]) and (int(a[4]) >= 0) and (int(a[4])) <= 49):            
+# a1 = int(a[0])
+# a2 = int(a[0])
+# a3 = int(a[0])
+# a4 = int(a[0])
+# a5 = int(a[0])
+
+
+
+
+
+
+# from random import randint
+# 
+# def Podaj_liczbe():
+#     test = False
+#     liczba = 0
+#     while(test == False):    
+#         try:        
+#             liczba = int(input("Zgadnij liczbę:"))
+#             test = True            
+#         except ValueError:
+#             print("Podałeś stringa zamiast liczby")
+#         if((liczba < 1) or (liczba > 100)) and (test == True):
+#             print("Podałeś liczbę z poza zakresu")
+#             test = False    
+#         if(test == True):
+#             return(int(liczba))

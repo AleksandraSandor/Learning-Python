@@ -1,0 +1,41 @@
+{% extends "Szablon.html" %}
+{% comment %}
+ship.html
+{% endcomment %}
+<!doctype html>
+
+
+
+
+{% block content %}
+	    <h1>Imperialna	baza	statków</h1>
+		<p>
+		    <strong>Nazwa:</strong>
+			{{ name	}}
+        </p>
+        <p>
+			<strong>Typ:</strong>
+			{{ type	}}
+		</p>
+		<p>
+			<strong>Właściciel:</strong>
+			{{ owner }}
+		</p>
+		{% if test == 2 %}
+			<p> test = 2 </p>
+		{% elif test == 3 %}
+			<p> test = 3</p>
+		{% else %}
+			<p> test != 2 and 3 </p>
+		{% endif %}
+		{% for keyy, vall in mac %}
+			{{ keyy }} : {{ vall }} </br><!--//todo -->
+		{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+

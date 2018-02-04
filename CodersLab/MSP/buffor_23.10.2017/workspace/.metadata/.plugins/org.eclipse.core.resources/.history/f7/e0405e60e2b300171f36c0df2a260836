@@ -1,0 +1,2 @@
+from mysql.connector import connect
+cnx    =    connect(user="root",    password="coderslab",    host="127.0.0.1")

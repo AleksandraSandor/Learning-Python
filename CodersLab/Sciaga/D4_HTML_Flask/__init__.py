@@ -1,0 +1,79 @@
+#===============================================================================
+#                Flask
+#===============================================================================
+#================Najprostszy server:
+# from flask import Flask
+# app = Flask(__name__)
+# @app.route("/")
+# def hello():
+#     return ":* :* :* :* a kuku ruku :*"
+# # if __name__ == "__main__":
+# #     app.run()                           
+#================Parametry w URL:
+import requests
+r = requests.get("http://www.onet.pl") 
+print(r.text)
+
+
+
+from flask import Flask
+from flask import request
+app = Flask(__name__)
+
+@app.route("/<name_web>")
+def name_web(name_web):
+    return "Hello " + name_web + "!"
+
+@app.route("/zmienne/<string:zmienne_name>/<int:zmienne_int>/<float:zmienne_float>")
+def name_zmienne(zmienne_name,zmienne_int,zmienne_float):   
+    return "Hello " + zmienne_name + " ! " + str(zmienne_int) + " " + str(zmienne_float)
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return """<html><body>Zgadnij jaka godzine mam na mysli
+                <form action = "/login" method = "POST">
+                     Godzina <input type = "text" name = "godzina"/>
+                     :
+                     Minuty <input type = "text" name = "minuty"/>
+                     <input type = "submit"/>       
+                </form>         
+                </body></html>"""
+    elif request.method == "POST":
+        godzina = request.form["godzina"]
+        minuty = request.form["minuty"]
+        moja_godzina = "22"
+        moje_minuty = "22"
+        if (godzina+minuty == moja_godzina+moje_minuty):
+            odp = "ZGADLAS :)"
+        else:
+            odp = "NIE ZGADLAS :( "
+        return("Twoja godzina to  {}:{} a ja myslalem o {}:{} wiec {}".format(godzina,minuty,moja_godzina,moje_minuty,odp))
+
+
+
+
+
+from time import localtime, strftime
+
+@app.route("/time")
+def gettime_page():
+    return "Aktualny czas: {}".format(strftime("%H:%M:%S", localtime()))
+
+import datetime
+@app.route("/")
+def getdate_page():
+    return "Aktualna data: {}".format(str(datetime.date.today()))
+
+
+if __name__ == "__main__":
+    app.run()                                      
+
+
+
+
+
+
+#===============================================================================
+#                Koniec
+#===============================================================================

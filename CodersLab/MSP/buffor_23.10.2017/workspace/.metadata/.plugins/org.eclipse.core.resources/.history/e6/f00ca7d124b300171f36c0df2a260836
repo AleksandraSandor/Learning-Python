@@ -1,0 +1,19 @@
+# Zadanie 1 – kostka
+# 
+# Napisz klasę Dice, która będzie miała własność dice_type. W tej własności będziesz przechowywać liczbę
+# ścianek kostki. Kostka może być 3, 4, 6, 8, 10, 12, 20 lub 100-ścienna.
+# 
+# Napisz metodę roll(), która wylosuje liczbę z zakresu 1..dice_type, czyli zasymuluje rzut kostką.
+import random
+
+
+class Dice:
+    def __init__(self, dice_type):
+        if dice_type in [3, 4, 6, 8, 10, 12, 20, 100]:
+            self.dice_type = dice_type
+        else:
+            print("Zły dice type")
+    def roll(self):
+         print(random.randint(self.dice_type))
+
+a = Dice(3)

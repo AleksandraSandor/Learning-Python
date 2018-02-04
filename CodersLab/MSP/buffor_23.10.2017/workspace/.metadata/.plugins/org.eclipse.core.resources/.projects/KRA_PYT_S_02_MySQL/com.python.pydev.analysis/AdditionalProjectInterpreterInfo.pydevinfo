@@ -1,0 +1,33 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/KRA_PYT_S_02_MySQL/com.python.pydev.analysis/v2_indexcache
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.__init__|1508423435418571000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/__init__.py
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.G3|1508315979515556000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/G3.py
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.G2|1508315979515556000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/G2.py
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.G1|1508315979515556000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/G1.py
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.flas_db_exemple.__init__|1508423435438563000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/flas_db_exemple/__init__.py
+1_Zadania.Dzien_2.3_Relacje_wiele_wiele.flas_db_exemple.main|1508425539657161000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/3_Relacje_wiele_wiele/flas_db_exemple/main.py
+1_Zadania.Dzien_2.__init__|1508423435406576000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/Dzien_2/__init__.py
+test.__init__|1508323982350437000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/test/__init__.py
+1_Zadania.__init__|1508423435386584000|/home/bq666/workspace/KRA_PYT_S_02_MySQL/1_Zadania/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=1_Zadania.Dzien_2.3_Relacje_wiele_wiele.flas_db_exemple.main
+2=test.__init__
+-- END DICTIONARY
+-- START TREE 1
+9
+add|2|add_movie_page_post!10@add_movie_page!10@
+app|1|app!11@
+cnx|1|cnx!19@
+con|1|connect_to_db!10@
+db_|1|db_name!19@
+fin|2|find_cinema_page!10@find_cinema_page_post!10@
+hos|1|hostname!19@
+pas|1|passwd!19@
+use|1|username!19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

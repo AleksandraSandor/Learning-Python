@@ -1,0 +1,44 @@
+CREATE TABLE Users(
+    -> id int NOT NULL auto_increment, 
+    -> name varchar(60) not null,
+    -> email varchar(60) not null unique,
+    -> password varchar(60) not null, 
+    -> PRIMARY KEY(id));
+    
+ CREATE TABLE Messages(
+    -> id int NOT NULL auto_increment, 
+    -> users_id int,
+    -> message longtext,
+    -> PRIMARY KEY(id),
+    -> foreign key (users_id)references Users (users_id);
+
+   
+ CREATE TABLE Items(
+    -> id int NOT NULL auto_increment, 
+    -> name warchar(40),
+    -> description longtext,
+    -> price real(7,2), 
+    -> PRIMARY KEY(id);
+    
+ CREATE TABLE Orders(
+    -> id int NOT NULL auto_increment, 
+    -> description longtext,     
+    -> PRIMARY KEY(id);
+    
+ 
+ CREATE	TABLE Items_Orders(
+	->	id int auto_increment,
+	->	item_id	int	NOT	NULL,
+	->	order_id int NOT NULL,
+	->	PRIMARY	KEY(id),
+	->	FOREIGN	KEY(Order_id)	REFERENCES	Orders(order_id),
+	->	FOREIGN	KEY(Item_id)	REFERENCES	Items(item_id));
+    
+  SELECT * FROM Items WHERE	price > 13;    
+  
+  INSERT INTO Orders(description) values("przykładowy opis");
+  
+  
+  insert into Bilet(ilosc,cena) values(2,6.66);
+
+ 

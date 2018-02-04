@@ -1,0 +1,40 @@
+from random import randint
+
+def Podaj_liczbe():
+    test = False
+    liczba = 0
+    while(test == False):    
+        try:        
+            liczba = int(input("Zgadnij liczbę:"))
+            test = True            
+        except ValueError:
+            print("Podałeś stringa zamiast liczby")
+        if((liczba < 1) or (liczba > 100)) and (test == True):
+            print("Podałeś liczbę z poza zakresu")
+            test = False    
+        if(test == True):
+            return(int(liczba))
+
+
+wylosowana = randint(1, 100)
+twoja = Podaj_liczbe()
+test = False
+proby = 0
+
+while(test == False):
+    if twoja == wylosowana:
+        print("Gratuluję, zgadłeś, liczba to {}. Zgadłeś w {} próbie", wylosowana, proby)
+        test = True
+    else:
+        proby += 1
+        if(twoja > wylosowana):
+            print("Podałeś za dużą liczbę")
+        if(twoja < wylosowana):
+            print("Podałeś za małą liczbę")        
+        twoja = Podaj_liczbe()
+
+print("Koniec")
+
+
+
+ 

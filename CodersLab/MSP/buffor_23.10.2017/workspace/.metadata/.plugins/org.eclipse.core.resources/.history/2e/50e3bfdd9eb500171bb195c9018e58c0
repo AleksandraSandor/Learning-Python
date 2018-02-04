@@ -1,0 +1,9 @@
+from model.user import user
+from db.db import connect_to_db
+
+cnx = connect_to_db("warsztat_2_messages")
+cur = cnx.cursor()
+
+new_user = user("rafal@mail.com", "rafal", "rafal")
+new_user.hashed_password = "qwerty"
+new_user.save(cur)

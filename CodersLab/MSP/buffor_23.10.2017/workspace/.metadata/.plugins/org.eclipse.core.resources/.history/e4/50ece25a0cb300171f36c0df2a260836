@@ -1,0 +1,58 @@
+# Zadanie
+# 
+# Napisz obiektowo program, który będzie obsługiwał skanowanie produktów w sklepie.
+# 
+# Stwórz klasę Product. Klasa ta ma posiadać podane atrybuty:
+# 
+# id - liczba całkowita. Powinna być unikalna w całym systemie (jak to osiągnąć będzie wyłumaczone w dalszej części zadania).
+# name - string. Jest to nazwa danego produktu.
+# description - string. Jest to opis danego produktu.
+# price - float. Jest to cena za jeden produkt. Powinna być większa od 0.01.
+# quantity - liczba całkowita większa od zera.
+# Klasa powinna mieć też nastepujące metody:
+# 
+# konstruktor - powinien przyjmować opis, cenę i ilość produtku.
+# atrybut id powiniem mieć możliwość wyłącznie odczytu. Rozważ użycie dekoratora.
+# metodę get_total_sum() która będzie zwracała łączną kwotę za dany produkt (wyliczaną jako ilość * cena produktu.
+# ####Generowanie unikalnego id dla produktu: W dalszej części programu będziemy chcieli identyfikować nasze produkty po ich id. Dlatego musimy zagwarantować że każdy z stworzonych produktów będzie miał unikalny numer identyfikacyjny. W tym celu powinniśmy zdefiniować zmienną next_id, którą należy umieścić poza klasą.
+# 
+# Zmienna ta będzie trzymała id ktore zostanie nadane następnemu stworzonemu produktowi. Nastepnie w kostruktorze klasy musimy wykonać następujące czynności:
+# 
+# własnie tworzonemu produktowi przypisać id trzymane w zmiennej next_id,
+# zwiększyć wartość next_id o jeden.
+# # w konstruktorze
+# self.id = next_id
+# next_id += 1
+# Dzieki temu żaden z naszych produktów nie będzie miał takiego samego id. Rozważ użycie instrukcji global.
+
+
+next_id = 1
+class Product:
+    id = 0    
+    def __init__(self, description, price, quantity):
+        # ZRÓB SPRAWDZANIE WARUNKÓW
+        global next_id
+        self.id = next_id
+        next_id += 1        
+        self.name = "name"
+        self.description = description
+        self.price = price
+        self.quantity = quantity
+        print(self.id)
+    def get_total_sum(self):
+        return self.quantity * self.price
+        
+        
+p1 = Product("prod1", 50, 2)
+p2 = Product("prod2", 50, 2)
+
+        
+        
+        
+        
+      
+        
+        
+        
+        
+    

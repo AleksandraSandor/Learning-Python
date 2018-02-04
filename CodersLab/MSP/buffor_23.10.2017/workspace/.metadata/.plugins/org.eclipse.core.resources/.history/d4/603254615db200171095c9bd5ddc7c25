@@ -1,0 +1,58 @@
+# Zadanie 3.
+# 
+# Stwórz klasę BankAccount, która ma spełniać następujące wymogi:
+# 
+# Mieć prywatne atrybuty:
+# number - atrubyt ten powinien trzymać numer identyfikacyjny konta (dla uproszczenia możemy
+#  założyć że numerem konta może być dowolna liczba całkowita),
+# cash - atrybut określający ilość pieniędzy na koncie. Ma to być liczba zmiennoprzecinkowa.
+# Posiadać konstruktor przyjmujący tylko numer konta. Atrubyt cash powinien być zawsze nastawiany
+#  na 0.0 dla nowo tworzonego konta.
+# Posiadać getery do atrybutów number i cash, ale NIE posiadać do nich seterów (nie chcemy żeby raz stworz-
+# one konto mogło zmienić swój numer, a do atrybutu cash dodamy specjalne funkcje modyfikujące jej wartość).
+# Posiadać metodę 'depositCash(amount)' której rolą będzie zwiększenie wartości atrybutu cash o podaną
+#  watość. Pamiętaj o sprawdzeniu czy podana wartość jest:
+# Wartością numeryczną,
+# Wieksza od 0.0
+# Posiadać metodę withdraw_cash(amount) której rolą będzie zmniejszenie wartości atrybutu cash o podaną
+#  watość. Metoda ta powinna zwracać ilość wypłaconych pieniędzy. Dla uproszczenia zakładamy że ilośc
+#   pieniędzy na koncie nie może zejść poniżej 0.0, np. jeżeli z konta na którym jest 300zł próbujemy
+#    wypłacić 500zł to metoda zwroci nam tylko 300zł. Pamiętaj o sprawdzeniu czy podana wartość jest:
+# Wartością numeryczną,
+# Wieksza od 0.0
+# Posiadać metodę print_info() nie przyjmującą żadnych parametrów. Metoda ta ma wyświetlić informację
+#  o numerze konta i jego stanie.
+
+class BankAccount:
+    def __init__(self, number):
+        self.__number = number
+        self.__cash = 0.0
+    def get_cash(self):
+        return self.__cash
+    def get_number(self):
+        return self.__number
+    def depositCash(self,amount):
+        try:
+            self.__amount = float(amount)
+        except:
+            print("Podałeś złą wartość cash")
+        
+        
+        
+        
+        
+b = BankAccount("123456")
+print(b.get_cash())
+print(b.get_number())
+
+
+
+# b.set_cash(333)
+# print(b.get_cash())
+#   def set_cash(self, data):
+#         try:
+#             self.__cash = float(data)
+#         except:
+#             self.__cash = 999
+
+        

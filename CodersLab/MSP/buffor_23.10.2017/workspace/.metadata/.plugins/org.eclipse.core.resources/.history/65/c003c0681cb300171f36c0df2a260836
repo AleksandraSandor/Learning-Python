@@ -1,0 +1,8 @@
+class Book(object):
+    name = None
+    price = None
+    author = None
+book = Book()
+
+for page in book:
+    print(page)

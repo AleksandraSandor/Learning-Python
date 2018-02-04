@@ -1,0 +1,5 @@
+create table user_data(
+	id int auto_increment Primary key,
+	email varchar(255) not null unique key,
+	username varchar(255) not null,
+	hashed_password varchar(50) not null);

@@ -1,0 +1,29 @@
+#===============================================================================
+#         Metody Statyczne i Klasowe
+#===============================================================================
+class Book:
+    def __init__(self):
+        self.name = "hobbi"
+        self.price = 12.13
+        self.author = "piercura"
+    def print_book_info(self):
+        print(self.name)
+        print(self.price)
+        print(self.author)
+    @staticmethod               #<--------------------------------
+    def get_silmarillion():
+        b = Book()
+        b.name = "Silmarillion"
+        b.author = "J. R. R. Tolkien"
+        b.price = 42.50
+        return b
+    @classmethod
+    def cm(cls):
+        print("Pozdrowienia z klasy" + cls.__name)
+        cls.print_book_info(cls)
+        
+    
+Book.cm()
+book = Book.get_silmarillion()
+book.print_book_info()
+    

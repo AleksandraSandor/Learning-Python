@@ -1,0 +1,32 @@
+from random import randint
+
+def Podaj_liczbe():
+    test = False
+    while(test == False):    
+        try:        
+            liczba = int(input("Zgadnij liczbę:"))
+            test = True            
+        except ValueError:
+            print("Podałeś stringa zamiast liczby")
+    if ((liczba < 1) or (liczba > 100)):
+        print("Podałeś liczbę z poza zakresu")
+        test = False    
+    if(test == True):
+        return(str(liczba)) 
+    
+
+a = Podaj_liczbe()
+
+
+wylosowana = randit(1,100)
+
+
+
+
+
+# if (type(liczba) == int):
+#     print("OK")
+# a = 0
+# a = Losuj()
+#print(a)
+ 

@@ -1,0 +1,13 @@
+class Example:
+    number = 0
+    
+    @number_squared.setter
+    #@property
+    def number_squared(self):
+        return self.number ** 2
+    
+e = Example()
+e.number = 2
+print(e.number)
+#e.number_squared = 10
+print(e.number_squared)

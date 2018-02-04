@@ -1,0 +1,17 @@
+from random import randint
+
+def Losuj():
+    try:
+        liczba = int(input("Zgadnij liczbę:"))
+    except ValueError:
+        print("Podałeś stringa zamiast liczby")
+    except NameError:
+        print("test")
+    return(liczba)
+
+# if (type(liczba) == int):
+#     print("OK")
+
+
+print(Losuj(liczba))
+ 

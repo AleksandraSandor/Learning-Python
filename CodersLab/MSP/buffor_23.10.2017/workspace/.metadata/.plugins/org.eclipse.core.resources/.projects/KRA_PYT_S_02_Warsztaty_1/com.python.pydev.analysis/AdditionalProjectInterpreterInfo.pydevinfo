@@ -1,0 +1,22 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/bq666/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/KRA_PYT_S_02_Warsztaty_1/com.python.pydev.analysis/v2_indexcache
+exercise_2|1507906163559984000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_1/exercise_2.py
+exercise_1|1507895911646782000|/home/bq666/workspace/KRA_PYT_S_02_Warsztaty_1/exercise_1.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=exercise_2
+1=exercise_1
+-- END DICTIONARY
+-- START TREE 1
+5
+pod|2|Podaj_liczbe!10@podaj_liczby!18@
+pro|1|proby!11@
+tes|1|test!11@
+two|1|twoja!11@
+wyl|1|wylosowana!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

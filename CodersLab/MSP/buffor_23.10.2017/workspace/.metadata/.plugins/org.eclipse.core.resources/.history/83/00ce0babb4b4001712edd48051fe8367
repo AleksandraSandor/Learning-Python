@@ -1,0 +1,41 @@
+from flask import Flask, request
+from mysql.connector import connect
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="coderslab", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+        <head>
+            <title>Deletion</title>
+        </head>
+        <body>
+            {}
+        </body>
+    </html>
+    """
+    try:
+        cnx = connect_to_db("exercises_db")
+        cur = cnx.cursor()
+        table = request.args.get("table")
+        id = request.args.get("id")
+        print(table)
+        print(id)
+        sql = "delete from {} where id = {};".format(table,id)
+        cur.execute(sql)
+        html = html.format("Usunięto produkt")        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()

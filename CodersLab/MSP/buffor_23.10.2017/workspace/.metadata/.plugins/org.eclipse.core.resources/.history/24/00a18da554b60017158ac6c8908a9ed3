@@ -1,0 +1,32 @@
+print("Hello World")
+a = "to jest tekst do testu"
+print(a)
+print(a.title())
+print(a.upper())
+print(a.lower())
+
+mac = "to ta ta to"
+mac_upper = mac.upper()
+print(mac_upper)
+print(mac)
+
+a = "     sratatata     r  "
+print(a)
+print(a.rstrip())
+print(a.lstrip())
+print(a.strip())
+
+a = ["a", "b", "c", "d"]
+print(a)
+a.append("e") #<--- dodaje na końcu 
+print(a)
+a.insert(3, "e") #<--- dodaje w konkretny index
+#print(a)
+del a[3] #<--- usuwa i przesuwa do konkrentego indexu
+#print(a)
+a.pop(3) #<--- usuwa i przesuwa do konkrentego indexu
+print(a)
+a.remove("b") #<--- usuwa pierwsze wystapienie 
+#print(a)
+a = ["test", "ala", "ma", "kota", "chyba"]
+print(a)

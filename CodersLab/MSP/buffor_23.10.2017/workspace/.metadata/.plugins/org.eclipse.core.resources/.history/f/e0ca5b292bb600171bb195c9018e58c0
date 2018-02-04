@@ -1,0 +1,155 @@
+-------------MySql
+mysql -h localhost -u root -p
+
+SHOW DATABASES;
+SHOW TABLES;
+describe library_user; <--- TABELA !!! <--- typy danych w tabeli
+select * from <tabela>; <--- wszystkie wartosci w tabeli
+
+CREATE DATABASE TEST;
+USE TEST;
+CREATE TABLE person(
+    -> id int NOT NULL, 
+    -> name char(100) NOT NULL,
+    -> surname varchar(255) not null,
+    -> email varchar(255) null, 
+    -> PRIMARY KEY(id));
+drop table library_user;
+drop database nazwa_db;
+
+insert into Bilet(ilosc,cena) values(2,6.66);
+delete from Bilet
+
+update product set price = floor(price) where price < 2.7
+
+
+
+http://127.0.0.1:5000/?table=Client&id=1
+mysql -u root -p -D cinema_db < kino.sql
+
+WIELE do wielu:
+create table Product__Orders(id int auto_increment, Product_id int(11), _Order_id int(11), primary key (id), foreign key(Product_id) references Product(id), foreign key(_Order_id) references _Order(id));
+
+---------------
+
+
+
+
+
+
+
+sudo apt install python3-pip   <--- instalowanie programu pip który słurzy do instalowania zew. bibliotek do pythona
+pip3 install django 
+pip3 install --upgrade <nazwa>
+pip3 install -r <nazwa-pliku> <--- instalacja z pliku
+------------------flask:
+export FLASK_APP=hello.py
+flask run
+flask run --host=0.0.0.0
+lsof -i :5000
+
+
+
+
+
+------------------virtualenv
+virtualenv --no-site-packages projekt1
+virtualenv --no-site-packages projekt2
+source ./projekt1/bin/activate
+pip install pip --upgrade
+pip install django==1.2.6
+deactivate
+source ./projekt2/bin/activate
+pip install pip --upgrade
+pip install django==1.4.2
+deactivate
+source /sciezka/do/srodowiska/bin/activate
+pip freeze > /tmp/requirements.txt
+pip install -r requirements.txt
+virtualenv -p python3 <nazwa_katalogu>
+
+
+
+------------------BASH
+history <--- lista 1000 ostatnich komend   CTRL+R
+!! <--- wykonuje ostatnią komendę
+!5 <--- wykonuje 5 komendę z listy
+!-3 <--- wykonuje 3 komendę od końca
+!nazwa <--- wykonuje ostatnią komendę zaczynającą się od grep
+mkdir
+pwd <--- scieżka gdzie jesteśmy 
+cp plik1 plik2 <--- kopiowanie plików 
+mv plik1 plik2 <--- przenoszenie plików
+ls -a <--- także ukryte liki 
+ls -l <--- dodatkowe info
+rm plik
+rm -r <--- także katalogi 
+rmdir katalog
+cat file <--- wyświetala plik 
+less plik <--- wyświetla plik strona po stronie 
+head plik <--- wyswietla pierwsze 10 lini pliku
+head -n <--- wyswietla n lini
+tail -n < wyświetla n lini
+tail plik <--- wyświetla ostatnie 10 lini pliku
+wc plik <--- podaje liczbę słów, znaków lini lub bajtów w pliku/potoku
+wc -c bity
+wc -i bity ?
+wc -w slowa
+wc -m znaki
+touch <--- tworzy plik o podanej nazwie
+
+
+
+
+
+------------------find:
+find <katalog startowy><kryteria i akcje>
+find . -name "pattern" -print
+-atime n <--- plik utworzny n dni temu np:   +7 utworzony dawniej niz 7 dni temu
+-mtime n <--- plik modyfukowany n dni temu   -5 zmodyfikowany nie później niż 5 dni temu
+-size n <--- plik ma n bloków (blok to 512 bajtów) np: +100 plik większy niż 50 kB
+-type f <--- wyszukuje po typie pliku f = plik txt d= katalog
+-name plik <--- nazwa pliku
+-user usr <--- wlasciciel pliku 
+-group <--- grupa 
+-perm p <--- Tryb dostepu do pliku gdzie p to liczba 
+-print <--- wyswietla scieżę do pliku
+-exec cmd <--- wykonuje komende na pliku 
+
+
+
+
+
+
+
+
+------------------grep:
+-i <--- szuka nie zwarzając na wielkośc liter
+-w <--- tylko pełne słowo 
+-A <n> <--- pokazuje n lini po wyszukanym słoie
+-B <n> <--- pokazuje n lini przed wyszukanym slowem
+-r <--- wyszukuje we wszystkich plkach podanego katalogu
+-v <-- wyszukuje wszystkie linijki nie zawierajace podanego slowa
+-c <--- podaje liste wystapien
+-I <--- wypisuje nazwy plików zawierajace slowo 
+-n <--- podaje numer lini wysapienia 
+
+
+
+
+
+
+
+
+
+------------------Katalogi
+/dev <--- urządzenia
+/proc <--- miedzy innnymi informacje o systemie
+/etc <--- pliki konfiguracyjne 
+/sbin <--- pliki binarne systemowe
+/lib <--- biblioteki
+/mnt <--- zamontowane dyski
+/bin <--- programy 
+/etc/init.d <--- Katalog z któ©ego uruchamiane są skrypty podczas startu systemu
+/etc/profile.d <--- uruchamiane przy logowaniu urzytkownika
+/usr <--- pliki wykonywalne programów, kod źródłowy, biblioteki i dokumentacjie 

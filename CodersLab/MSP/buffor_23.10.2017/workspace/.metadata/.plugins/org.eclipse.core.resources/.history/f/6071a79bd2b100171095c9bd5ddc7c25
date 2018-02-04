@@ -1,0 +1,36 @@
+from flask import Flask
+from flask import request
+
+
+app = Flask(__name__)
+
+@app.route("/calc", methods = ["GET", "POST"])
+def calc_page():
+    if request.method == "GET":
+        return """<html><body>
+                <form method = 'POST'>
+                     <input type = "text" name = "liczba_a"/>
+                     <input type = "text" name = "liczba_b"/>
+                     <input type = "submit" name = "przycisk" value = "Dodaj"/> 
+                     <input type = "submit" name = "przycisk" value = "Odejmij"/> 
+                     <input type = "submit" name = "przycisk" value = "Podziel"/> 
+                     <input type = "submit" name = "przycisk" value = "Pomnóż"/> 
+                </form>         
+                </body></html>"""
+    elif request.method == "POST":
+        liczba_a = int(request.form["liczba_a"])
+        liczba_b = int(request.form["liczba_b"])
+        przycisk = request.form["przycisk"]        
+        if(przycisk == "Dodaj"):
+            wynik = liczba_a + liczba_b
+        if(przycisk == "Odejmij"):
+            wynik = liczba_a - liczba_b
+        if(przycisk == "Podziel"):
+            wynik = liczba_a / liczba_b
+        if(przycisk == "Pomnóż"):
+            wynik = liczba_a * liczba_b
+        return "Wynik = {}".format(wynik)
+
+app.run()
+
+

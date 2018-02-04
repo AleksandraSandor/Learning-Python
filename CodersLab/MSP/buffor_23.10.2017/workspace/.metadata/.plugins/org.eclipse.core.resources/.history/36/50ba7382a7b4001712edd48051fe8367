@@ -1,0 +1,42 @@
+from flask import Flask
+from mysql.connector import connect
+
+def connect_to_db(db_name):
+    cnx = connect(user="root", password="", host="localhost", database=db_name)
+    cnx.autocommit = True
+    return cnx
+
+app = Flask(__name__)
+
+@app.route("/")
+def main_page():
+    html = """
+    <html>
+    <head>
+    <title>Products in exercises_db</title>
+    </head>
+    <body>
+        <h1>Products in exercises_db</h1>
+        {}
+    </body>
+    </html>
+    """
+    try:
+        cnx = connect_to_db("exercises_db")
+        cur = cnx.cursor()
+        cur.execute("SELECT * FROM product;")
+        content = ""
+        for row in cur:
+            content += "{} {} {} {}</br>".format(row[0],row[1],row[2],row[3])
+            
+        html = html.format(content)
+        
+        cur.close()
+        cnx.close()
+    except Exception as e:
+        print("An error occurred")
+        print(e)
+        
+    return html
+
+app.run()

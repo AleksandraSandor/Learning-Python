@@ -1,0 +1,40 @@
+from mysql.connector import connect, cursor
+from mysql.connector.errors import ProgrammingError
+from mysql.connector.errors import InterfaceError
+     
+
+
+def connect_to_db(db_name):
+    username = "root"
+    passwd = "coderslab"
+    hostname = "127.0.0.1"
+    #db_name = "exercises_db"
+    
+    try: 
+        cnx = connect(user = username, password = passwd, host = hostname, database = db_name)
+        cnx.autocommit = True #<--------------------------
+        cursor = cnx.cursor()
+        cursor.execute(sql_create_db)
+        # cnx.commit() <--------------------------
+        cursor.close()
+        cnx.close()        
+        print("Połączenie gotowe")
+        
+        
+    except ProgrammingError as e:        #except ProgramingError as e:
+        print(e) #"Nieudane połączenie")# print(e)
+    except InterfaceError:
+        print("Zła nazwa hosta")    
+    return(cnx)
+
+#-------------KURWA MAC !!!!
+
+#for i in range(0,5);
+slownik = {"ilosc": [10, 12, 13, 14, 15], "cena": [12.12, 13.13, 14.14, 15.15, 16.16] }
+for i in slownik:
+    for ii in slownik[1]:
+        print(ii)
+
+
+# sql_create_db = """insert into Bilet(ilosc,cena) values({}, {})""".format(2, 2.22) 
+# connect_to_db("cinemas_db")

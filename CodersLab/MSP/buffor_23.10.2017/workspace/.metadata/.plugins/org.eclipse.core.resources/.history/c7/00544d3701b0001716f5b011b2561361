@@ -1,0 +1,13 @@
+from random import randint
+
+
+#try:
+liczba = int(input("Zgadnij liczbę:"))
+#except  
+
+
+# if (type(liczba) == int):
+#     print("OK")
+
+print(liczba)
+ 

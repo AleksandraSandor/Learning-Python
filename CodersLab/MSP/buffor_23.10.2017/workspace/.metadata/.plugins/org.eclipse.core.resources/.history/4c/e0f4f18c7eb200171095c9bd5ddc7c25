@@ -1,0 +1,42 @@
+class Shape:
+    def __init__(self, x, y, color):
+        try:
+            self.__x = float(x)
+        except:
+            self.__x = 0
+        try:    
+            self.__y = float(y)
+        except:
+            self.__y = 0            
+        self.__color = str(color)
+    def __str__(self):
+        return str(self.__x)+" "+str(self.__y)+" "+str(self.__color)
+    def distance(self,other):
+        print(self.__x)
+        print(other.__x)
+        print(((self.__x-other.__x)**2 + (self.__y-other.__y)**2)**1/2)
+    
+
+class Circle(Shape):
+    def __init__(self, x, y, color, promien):
+        super(Circle,self).__init__(x, y, color)        
+#         try:
+#             self.promien = float(promien)
+#         except:
+#             self.promien = 0
+#         try:
+#             self.__x = float(x)
+#         except:
+#             self.__x = 0
+#         try:
+            
+        
+       
+    
+b = Shape(13, 13, "czarny")
+print(b)
+a = Circle(12, 12, "czerwony", 10)    
+print(a)
+
+
+

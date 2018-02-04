@@ -1,0 +1,38 @@
+from mysql.connector import connect, cursor
+from mysql.connector.errors import ProgrammingError
+from mysql.connector.errors import InterfaceError
+     
+
+
+def connect_to_db(db_name):
+    username = "root"
+    passwd = "coderslab"
+    hostname = "127.0.0.1"
+    #db_name = "exercises_db"
+    
+    try: 
+        cnx = connect(user = username, password = passwd, host = hostname, database = db_name)
+        cnx.autocommit = True
+        cursor = cnx.cursor()
+        cursor.execute(sql_create_db)
+        cnx.commit()
+        cursor.close()
+        cnx.close()        
+        print("Połączenie gotowe")
+        
+        
+    except ProgrammingError:        #except ProgramingError as e:
+        print("Nieudane połączenie")# print(e)
+    except InterfaceError:
+        print("Zła nazwa hosta")    
+    return(cnx)
+
+
+# sql_create_db = "create database cinemas_db;"# <----
+sql_create_db = """create table Kino(id int not null auto_increment,
+                             name varchar (255) character set utf8,
+                              adress varchar (255) character set utf8,
+                               primary key (id));""" 
+ 
+
+connect_to_db("cinemas_db")

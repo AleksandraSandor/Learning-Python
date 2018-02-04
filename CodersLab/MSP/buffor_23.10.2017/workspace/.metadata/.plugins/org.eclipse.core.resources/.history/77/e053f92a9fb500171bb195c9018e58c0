@@ -1,0 +1,17 @@
+from model.user import user
+from db.db import connect_to_db
+
+cnx = connect_to_db("warsztat_2_messages")
+cur = cnx.cursor()
+
+new_user = user("rafal@mail.com", "rafal", "rafal")
+new_user.hashed_password = "qwerty"
+new_user.save(cur)
+
+
+
+
+# 
+#  cursor = cnx.cursor()        
+#         sql_create_db = """insert into Bilet(ilosc, cena) values({},{})""".format(slownik["ilosc"],slownik["cena"])
+#         cursor.execute(sql_create_db)

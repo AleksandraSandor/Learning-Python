@@ -1,0 +1,37 @@
+def jedi_generator():
+  
+        yield    "Obi-Wan"
+        yield    "Anakin"
+        yield    "Qui-Gon"
+
+# for    jedi    in    jedi_generator():
+#         print(jedi)
+
+jedi = jedi_generator()
+jedi.__iter__()
+print(jedi.__next__())
+print(jedi.__next__())
+print(jedi.__next__())
+print(jedi.__next__())
+
+jedi = jedi_generator()
+jedi.__iter__()
+print(jedi.__next__())
+#-------------------------------
+class  Numbers:
+    def __iter__(self):
+        self.counter=0
+        print('wywolanie __iter__')
+        return self
+     
+    def __next__(self):
+        print('wywolanie __next__')
+        if self.counter>=5:
+            raise StopIteration
+        self.counter+=1
+        return self.counter
+ 
+#tworze obiekt
+numbers = Numbers
+for n in numbers:
+    print(n)
